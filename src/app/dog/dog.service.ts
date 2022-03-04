@@ -9,8 +9,8 @@ import { IDog } from "./dog";
 })
 export class DogService {
 
-  private dogUrl = 'api/dogs/dogs.json';
-
+  // private dogUrl = 'api/dogs/dogs.json';
+  private dogUrl = '../assets/dogs/dogs.json';
   constructor(private http: HttpClient) { }
 
   getDogs(): Observable<IDog[]> {

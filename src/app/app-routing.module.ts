@@ -6,8 +6,10 @@ import { DogModule } from './dog/dog.module';
 import { WelcomeComponent } from './home/welcome.compnent';
 
 const routes: Routes = [
-  {path: '', component: WelcomeComponent},
-  {path: 'dogs', component: DogListComponent}
+  {path: 'dogs', component: DogListComponent},
+  {path: 'welcome', component: WelcomeComponent},
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 
 @NgModule({
