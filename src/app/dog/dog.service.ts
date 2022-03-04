@@ -9,12 +9,12 @@ import { IDog } from "./dog";
 })
 export class DogService {
 
-  private productUrl = 'api/dogs/dogs.json';
+  private dogUrl = 'api/dogs/dogs.json';
 
   constructor(private http: HttpClient) { }
 
   getDogs(): Observable<IDog[]> {
-    return this.http.get<IDog[]>(this.productUrl)
+    return this.http.get<IDog[]>(this.dogUrl)
       .pipe(
         tap(data => console.log('All: ', JSON.stringify(data))),
         catchError(this.handleError)
