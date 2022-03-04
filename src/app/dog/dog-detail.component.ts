@@ -37,4 +37,9 @@ export class DogDetailComponent implements OnInit {
     this.router.navigate(['/dogs']);
   }
 
+  toForm(): void {
+    const name = String(this.route.snapshot.paramMap.get('id'));
+    this.router.navigateByUrl(`/dogs/${name}/form`);
+  }
+
 }
