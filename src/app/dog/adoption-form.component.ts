@@ -33,7 +33,10 @@ export class AdoptionFormComponent implements OnInit {
 
   onBack(): void {
     const name = String(this.route.snapshot.paramMap.get('id'));
-
     this.router.navigateByUrl(`/dogs/${name}`);
+  }
+
+  onSubmit(): void {
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
   }
 }

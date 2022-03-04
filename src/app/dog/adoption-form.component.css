@@ -1,0 +1,63 @@
+.FormHeader {
+  border-radius: 20px;
+  border-color: #FFC93F;
+  background-color: white;
+  border-style: solid;
+  width: 50vw;
+  /* height: 60vh; */
+  padding-bottom: 10px;
+}
+/* comment made for push */
+
+.AdoptionBody {
+  display: grid;
+  grid-template-columns: auto;
+  width: 50vw;
+
+}
+
+h2 {
+  /* margin-top: -10px; */
+  color: black;
+  margin-top: -0.25em;
+
+}
+
+.myForm {
+  display: grid;
+  grid-template-columns: [labels] auto [controls] 1fr;
+  grid-auto-flow: row;
+  grid-gap: .8em;
+  font-size: large;
+  /* background: #eee; */
+  padding: 1.2em;
+  margin-top: -1em;
+}
+.myForm > label  {
+  grid-column: labels;
+  grid-row: auto;
+}
+.myForm > input,
+.myForm > textarea,
+.myForm > button {
+  grid-column: controls;
+  grid-row: auto;
+  border: none;
+  padding: 1em;
+}
+
+.clip-circle {
+  width: 30vw; 
+  clip-path: circle();
+  margin-top: 10px;
+}
+
+
+input {
+  background-color: #E5E5E5;
+  border-style: none;
+}
+
+label {
+  color: black;
+}
