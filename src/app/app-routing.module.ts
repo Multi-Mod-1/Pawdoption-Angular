@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: 'form', component: AdoptionFormComponent}
+  // {path: 'form', component: AdoptionFormComponent},
 ];
 
 @NgModule({
