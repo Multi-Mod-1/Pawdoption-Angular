@@ -25,7 +25,7 @@ export class DogListComponent implements OnInit, OnDestroy {
   }
 
   filteredDogs: IDog[] = [];
-  dogs: IDog[] = [];
+  dogs: IDog[] = [];  
 
   constructor(private dogService: DogService) {}
 

@@ -1,54 +1,52 @@
-{
-  "dogsData": [
-    {
-      "name": "Bruce",
-      "sex": "Male",
-      "age": 4,
-      "breed": "Doberman",
-      "location": "New York City",
-      "summary": "This pup will protect you from any danger. Beware, he loves to chase down clowns.",
-      "description": "Bruce came from animal control with an intentional obstruction and clearly severely malnourished. We suspect he was on the streets and so hungry that he was eating plastic. We rushed him to our vets, cleared the obstruction, and got him on the mend. He is still very thin, but on his way back to health. Bruce currently weighs 37 lbs., is 2 yrs. old (est. birth date 01/25/2020) and his adoption fee is $305",
-      "imageUrl": "assets/images/Bruce.jpeg"
-    },
-    {
-      "name": "Burton",
-      "sex": "Male",
-      "age": 2,
-      "breed": "Pembroke Welsh Corgi",
-      "location": "Atlanta",
-      "summary": "A meme worth delight who loves to snuggle.",
-      "description": "Burton was found by the county at a Dollar General in Cumming. His rescuers say that he's a truly awesome dog, and we agree! He has been good around kids and other dogs but his favorite thing to do is lay in the sun with his person. Overall, he is a low-energy dog looking for a person who will take him on adventures and give him a life full of love. Burton weighs 46 lbs., is 8 yrs. old (est. birth date 08/21/2013) and his adoption fee is $175.",
-      "imageUrl": "assets/images/Burton.jpeg"
-    },
-    {
-      "name": "Sno Cone",
-      "sex": "Female",
-      "age": 0.3,
-      "breed": "Maltese Terrier",
-      "location": "Houston",
-      "summary": "This walking, barking dandilion will delight your day, and night with the endless love it will provide you. Prone to passing out from excitement",
-      "description": "Paxton has stolen the hearts of our staff members with her great personality in just a matter of days. This happy girl would do best with a Rottweiler-experienced adopter, and a spacious house environment with easy outdoor access. Paxton is still a young doggo, so she'd appreciate a patient owner who can work with her on basic training skills. Paxton weighs 69 lbs., is 9 mos. old (birth date 3/13/2021) and her adoption fee is $500",
-      "imageUrl": "assets/images/Snocone.jpg"
-    },
-    {
-      "name": "Pugsly",
-      "sex": "Male",
-      "age": 5,
-      "breed": "Pug",
-      "location": "Florida",
-      "summary": "With a button nose prime for sniffing, this fella can dig up any bone in your yard. If you happen to have bones buried in your yard...",
-      "description": "Pugsly was rescued from a county shelter. He's a sweet, active guy that loves to run around the yard and go for long walks. He especially loves to play tug! He is very praise motivated and will pick up additional training well. He is picky about other dogs and needs slow introductions to make new dog friends. People, however, he loves right away! He weighs 56lbs and is about 5 years old (est DOB 03/14/2016). His adoption fee is $305.",
-      "imageUrl": "assets/images/Pugsly.jpg"
-    },
-    {
-      "name": "Biscuit",
-      "sex": "Female",
-      "age": 0.6,
-      "breed": "Golden Retriever",
-      "location": "Seattle",
-      "summary": "Good at retrieving things",
-      "description": "When we pulled Blitzen from animal control the day before Thanksgiving, he was lying in a pool of his own blood, sick and miserable. He'd been suffering from a severe case of parvo, a nasty virus found mainly in dogs. After weeks of fighting for his life at the hospital and in foster, he made a full recovery. Now, he's full of life and energy like any healthy doggo! He is a high energy pup that loves to play with other dogs his size. He is a bit too rambunctious for small dogs or small kids. He adores people and will make an awesome companion for an active family. He is also housetrained. Blitzen weighs 56 lbs., is 9 months old (est. birth date 3/24/2021) and his adoption fee is $305",
-      "imageUrl": "assets/images/Biscuit.jpg"
-    }
-  ]
-}
+[
+  {
+    "name": "Bruce",
+    "sex": "Male",
+    "age": 4,
+    "breed": "Doberman",
+    "location": "New York City",
+    "summary": "This pup will protect you from any danger. Beware, he loves to chase down clowns.",
+    "description": "Bruce came from animal control with an intentional obstruction and clearly severely malnourished. We suspect he was on the streets and so hungry that he was eating plastic. We rushed him to our vets, cleared the obstruction, and got him on the mend. He is still very thin, but on his way back to health. Bruce currently weighs 37 lbs., is 2 yrs. old (est. birth date 01/25/2020) and his adoption fee is $305",
+    "imageUrl": "assets/images/Bruce.jpeg"
+  },
+  {
+    "name": "Burton",
+    "sex": "Male",
+    "age": 2,
+    "breed": "Pembroke Welsh Corgi",
+    "location": "Atlanta",
+    "summary": "A meme worth delight who loves to snuggle.",
+    "description": "Burton was found by the county at a Dollar General in Cumming. His rescuers say that he's a truly awesome dog, and we agree! He has been good around kids and other dogs but his favorite thing to do is lay in the sun with his person. Overall, he is a low-energy dog looking for a person who will take him on adventures and give him a life full of love. Burton weighs 46 lbs., is 8 yrs. old (est. birth date 08/21/2013) and his adoption fee is $175.",
+    "imageUrl": "assets/images/Burton.jpg"
+  },
+  {
+    "name": "Sno Cone",
+    "sex": "Female",
+    "age": 0.3,
+    "breed": "Maltese Terrier",
+    "location": "Houston",
+    "summary": "This walking, barking dandilion will delight your day, and night with the endless love it will provide you. Prone to passing out from excitement",
+    "description": "Paxton has stolen the hearts of our staff members with her great personality in just a matter of days. This happy girl would do best with a Rottweiler-experienced adopter, and a spacious house environment with easy outdoor access. Paxton is still a young doggo, so she'd appreciate a patient owner who can work with her on basic training skills. Paxton weighs 69 lbs., is 9 mos. old (birth date 3/13/2021) and her adoption fee is $500",
+    "imageUrl": "assets/images/Snocone.jpg"
+  },
+  {
+    "name": "Pugsly",
+    "sex": "Male",
+    "age": 5,
+    "breed": "Pug",
+    "location": "Florida",
+    "summary": "With a button nose prime for sniffing, this fella can dig up any bone in your yard. If you happen to have bones buried in your yard...",
+    "description": "Pugsly was rescued from a county shelter. He's a sweet, active guy that loves to run around the yard and go for long walks. He especially loves to play tug! He is very praise motivated and will pick up additional training well. He is picky about other dogs and needs slow introductions to make new dog friends. People, however, he loves right away! He weighs 56lbs and is about 5 years old (est DOB 03/14/2016). His adoption fee is $305.",
+    "imageUrl": "assets/images/Pugsly.jpg"
+  },
+  {
+    "name": "Biscuit",
+    "sex": "Female",
+    "age": 0.6,
+    "breed": "Golden Retriever",
+    "location": "Seattle",
+    "summary": "Good at retrieving things",
+    "description": "When we pulled Blitzen from animal control the day before Thanksgiving, he was lying in a pool of his own blood, sick and miserable. He'd been suffering from a severe case of parvo, a nasty virus found mainly in dogs. After weeks of fighting for his life at the hospital and in foster, he made a full recovery. Now, he's full of life and energy like any healthy doggo! He is a high energy pup that loves to play with other dogs his size. He is a bit too rambunctious for small dogs or small kids. He adores people and will make an awesome companion for an active family. He is also housetrained. Blitzen weighs 56 lbs., is 9 months old (est. birth date 3/24/2021) and his adoption fee is $305",
+    "imageUrl": "assets/images/Biscuit.jpg"
+  }
+]
