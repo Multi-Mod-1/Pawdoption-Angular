@@ -1,6 +1,12 @@
+/*
+  Testing it on a different port because of my local host. Should be visiting:
+
+    "http://localhost:4200/welcome"
+*/
+
 describe("Welcome Page Testing", () => {
   it("Visits the welcome page of the applicaiton", () => {
-    cy.visit("http://localhost:51192/welcome");
+    cy.visit("http://localhost:65072/welcome");
   });
 
   it("Contains welcome text", () => {
