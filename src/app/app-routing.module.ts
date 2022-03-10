@@ -7,9 +7,8 @@ import { WelcomeComponent } from './home/welcome.compnent';
 
 const routes: Routes = [
   {path: 'dogs', component: DogListComponent},
-  {path: 'welcome', component: WelcomeComponent},
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-  { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+  { path: '', redirectTo: 'dogs', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dogs', pathMatch: 'full' }
 ];
 
 @NgModule({
