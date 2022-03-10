@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
   Testing it on a different port because of my local host. Should be visiting:
 
@@ -7,6 +8,11 @@
 describe("Welcome Page Testing", () => {
   it("Visits the welcome page of the applicaiton", () => {
     cy.visit("http://localhost:65072/welcome");
+=======
+describe("Welcome Page Testing", () => {
+  it("Visits the welcome page of the applicaiton", () => {
+    cy.visit("http://localhost:51192/welcome");
+>>>>>>> 41ab334 (cypress testing)
   });
 
   it("Contains welcome text", () => {
