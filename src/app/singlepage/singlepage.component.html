@@ -1,0 +1,38 @@
+<div class="single-page">
+      <div id="single-page-card">
+        <div class="single-page-header">
+          <div>
+            <img
+                class="single-page-dog-img"
+                src="dogObject.imageUrl"
+                alt="Brown and white dog with tounge sticking out"
+              ></img>
+            <h2 class="single-page-dog-name">{dogObject.name}</h2>
+          </div>
+          <div class="single-page-information">
+            <p>
+              Sex: {dogObject.sex}
+              <br/>
+              Age: {dogObject.age}
+              <br/>
+              Breed: {dogObject.breed}
+              <br/>
+              Location: {dogObject.location}
+            </p>
+          </div>
+        </div>
+        <div class="single-page-about-dog">
+          <p>
+            {dogObject.description}
+          </p>
+        </div>
+        <div class="single-page-button-div">
+          <a href={`/`} style="margin-right:10px">
+            <button class="single-page-button">Back To All Dogs</button>
+          </a>
+          <a href={`/dog/${dogID}/form`}>
+            <button class="single-page-button">Interested</button>
+          </a>
+        </div>
+      </div>
+    </div>
