@@ -7,7 +7,6 @@
   /* height: 60vh; */
   padding-bottom: 10px;
 }
-/* comment made for push */
 
 .AdoptionBody {
   display: grid;
@@ -60,4 +59,24 @@ input {
 
 label {
   color: black;
+}
+
+.single-page-button {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#84e296),
+    to(#49d463)
+  );
+  background-image: -webkit-linear-gradient(top, #84e296, #49d463);
+  background-image: -o-linear-gradient(top, #84e296, #49d463);
+  background-image: linear-gradient(to bottom, #84e296, #49d463);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 15px 30px;
+  margin: 5px;
+  text-decoration: none;
 }
