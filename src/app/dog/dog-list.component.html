@@ -1,30 +1,27 @@
-<div class='card'>
-  <div class='card-header'>
-    {{pageTitle}}
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
   </div>
-  <div class='card-body'>
-    <div class='row'>
-      <div class='col-md-2'>Filter by:</div>
-      <div class='col-md-4'>
-        <input type='text'
-        [(ngModel)]='listFilter' />
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filter by:</div>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="listFilter" />
       </div>
     </div>
-    <div class='row'
-         *ngIf='listFilter'>
-      <div class='col-md-6'>
-        <h4>Filtered by: {{listFilter}}</h4>
+    <div class="row" *ngIf="listFilter">
+      <div class="col-md-6">
+        <h4>Filtered by: {{ listFilter }}</h4>
       </div>
     </div>
-    <div class='table-responsive'>
-      <table class='table'>
-             <!-- *ngIf='dogs.length'> -->
+    <div class="table-responsive">
+      <table class="table">
+        <!-- *ngIf='dogs.length'> -->
         <thead>
           <tr>
             <th>
-              <button class='btn btn-primary'
-                      (click)='toggleImage()'>
-                {{showImage ? 'Hide' : 'Show'}} Image
+              <button class="btn btn-primary" (click)="toggleImage()">
+                {{ showImage ? "Hide" : "Show" }} Image
               </button>
             </th>
             <th>Name</th>
@@ -35,13 +32,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let dog of filteredDogs'>
+          <tr *ngFor="let dog of filteredDogs">
             <td>
-              <img *ngIf='showImage'
-                   [src]='dog.imageUrl'
-                   [title]='dog.name'
-                   [style.width.px]='imageWidth'
-                   [style.margin.px]='imageMargin'>
+              <img
+                *ngIf="showImage"
+                [src]="dog.imageUrl"
+                [title]="dog.name"
+                [style.width.px]="imageWidth"
+                [style.margin.px]="imageMargin"
+              />
             </td>
             <td>
               <a [routerLink]="['/dogs', dog.name]">
@@ -51,14 +50,13 @@
             <td>{{ dog.sex }}</td>
             <td>{{ dog.breed }}</td>
             <td>{{ dog.location }}</td>
-            <td> {{ dog.summary }}</td>
+            <td>{{ dog.summary }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-<div *ngIf='errorMessage'
-     class='alert alert-danger'>
+<div *ngIf="errorMessage" class="alert alert-danger">
   Error: {{ errorMessage }}
 </div>
