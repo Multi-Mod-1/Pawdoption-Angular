@@ -1,64 +1,14 @@
-<div class='card'>
-  <div class='card-header'>
-    {{pageTitle}}
-  </div>
-  <div class='card-body'>
-    <div class='row'>
-      <div class='col-md-2'>Filter by:</div>
-      <div class='col-md-4'>
-        <input type='text'
-        [(ngModel)]='listFilter' />
-      </div>
+<div id="dog-list">
+    <div class="list" *ngFor='let dog of filteredDogs'>
+        <!-- <list-shelf name={{dog.name}} summary={{dog.summary}}></list-shelf> -->
+        <div class="shelf">
+            <div id="text-content">
+              <p class="name">{{dog.name}}</p>
+              <p class="detail">{{dog.summary}}</p>
+            </div>
+            <div class="photo">
+              <img src={{dog.imageUrl}} alt={`picture of ${{dog.name}}`}/>
+            </div>
+        </div>
     </div>
-    <div class='row'
-         *ngIf='listFilter'>
-      <div class='col-md-6'>
-        <h4>Filtered by: {{listFilter}}</h4>
-      </div>
-    </div>
-    <div class='table-responsive'>
-      <table class='table'>
-             <!-- *ngIf='dogs.length'> -->
-        <thead>
-          <tr>
-            <th>
-              <button class='btn btn-primary'
-                      (click)='toggleImage()'>
-                {{showImage ? 'Hide' : 'Show'}} Image
-              </button>
-            </th>
-            <th>Name</th>
-            <th>Sex</th>
-            <th>Breed</th>
-            <th>Location</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let dog of filteredDogs'>
-            <td>
-              <img *ngIf='showImage'
-                   [src]='dog.imageUrl'
-                   [title]='dog.name'
-                   [style.width.px]='imageWidth'
-                   [style.margin.px]='imageMargin'>
-            </td>
-            <td>
-              <a [routerLink]="['/dogs', dog.name]">
-                {{ dog.name }}
-              </a>
-            </td>
-            <td>{{ dog.sex }}</td>
-            <td>{{ dog.breed }}</td>
-            <td>{{ dog.location }}</td>
-            <td> {{ dog.summary }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-<div *ngIf='errorMessage'
-     class='alert alert-danger'>
-  Error: {{ errorMessage }}
 </div>
