@@ -1,55 +1,47 @@
-<div class='card'>
-  <div class='card-header'>
-    {{pageTitle + ': ' + dog?.name}}
-  </div>
-
-  <div class='card-body'>
-    <div class='row'>
-      <div class='col-md-8'>
-        <div class='row'>
-          <div class='col-md-4'>Name:</div>
-          <div class='col-md-8'>{{dog?.name}}</div>
-        </div>
-        <div class='row'>
-          <div class='col-md-4'>Sex:</div>
-          <div class='col-md-8'>{{dog?.sex}}</div>
-        </div>
-        <div class='row'>
-          <div class='col-md-4'>Breed:</div>
-          <div class='col-md-8'>{{dog?.breed}}</div>
-        </div>
-        <div class='row'>
-          <div class='col-md-4'>Location:</div>
-          <div class='col-md-8'>{{dog?.location}}</div>
-        </div>
-        <div class='row'>
-          <div class='col-md-4'>Description:</div>
-          <div class='col-md-8'>{{dog?.description}}</div>
-        </div>
+<div className="single-page">
+  <div id="single-page-card">
+    <div className="single-page-header">
+      <div>
+        <img
+          class="center-block img-responsive single-page-dog-img"
+          [style.width.px]="200"
+          [style.margin.px]="2"
+          [src]="dog?.imageUrl"
+          [title]="dog?.name"
+          alt="Brown and white dog with tounge sticking out"
+        />
+        <h2 className="single-page-dog-name">{{ dog?.name }}</h2>
       </div>
-
-      <div class='col-md-4'>
-        <img class='center-block img-responsive'
-             [style.width.px]='200'
-             [style.margin.px]='2'
-             [src]='dog?.imageUrl'
-             [title]='dog?.name'>
+      <div className="single-page-information">
+        <p>
+          Sex: {{ dog?.sex }}
+          <br />
+          Age: {{ dog?.age }}
+          <br />
+          Breed: {{ dog?.breed }}
+          <br />
+          Location: {{ dog?.location }}
+        </p>
       </div>
     </div>
-  </div>
-
-  <div class='card-footer'>
-    <button class='btn btn-outline-secondary'
-            style='width:80px'
-            (click)='onBack()'>
-      <i class='fa fa-chevron-left'></i> Back
-    </button>
-  </div>
-  <div class='card-footer'>
-    <button class='btn btn-outline-secondary'
-            style='width:80px'
-            (click)='toForm()'>
-      <i class='fa fa-chevron-left'></i> Interested?
-    </button>
+    <div className="single-page-about-dog">
+      <p>{{ dog?.description }}</p>
+    </div>
+    <div className="single-page-button-div">
+      <button
+        class="btn btn-outline-secondary single-page-button"
+        style="width: 80px"
+        (click)="onBack()"
+      >
+        <i class="fa fa-chevron-left"></i> Back
+      </button>
+      <button
+        class="btn btn-outline-secondary single-page-button"
+        style="width: 80px"
+        (click)="toForm()"
+      >
+        <i class="fa fa-chevron-left"></i> Interested?
+      </button>
+    </div>
   </div>
 </div>
