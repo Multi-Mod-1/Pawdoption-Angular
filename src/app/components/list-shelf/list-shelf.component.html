@@ -1,9 +1,11 @@
 <div class="shelf">
   <div id="text-content">
-    <p class="name">{{name}}</p>
+    <h1 class="name">{{name}}</h1>
     <p class="detail">{{summary}}</p>
   </div>
   <div class="photo">
-    <img src={{imagePath}} alt={`picture of ${{name}}`}/>
+    <img [src]='imagePath' 
+         [style.width.px]='imageWidth'
+         [style.margin.px]='imageMargin'/>
   </div>
 </div>

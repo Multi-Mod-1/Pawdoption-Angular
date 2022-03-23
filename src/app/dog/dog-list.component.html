@@ -1,14 +1,5 @@
 <div id="dog-list">
-    <div class="list" *ngFor='let dog of filteredDogs'>
-        <!-- <list-shelf name={{dog.name}} summary={{dog.summary}}></list-shelf> -->
-        <div class="shelf">
-            <div id="text-content">
-              <p class="name">{{dog.name}}</p>
-              <p class="detail">{{dog.summary}}</p>
-            </div>
-            <div class="photo">
-              <img src={{dog.imageUrl}} alt={`picture of ${{dog.name}}`}/>
-            </div>
-        </div>
-    </div>
+  <div class="list" *ngFor='let dog of filteredDogs'>
+    <list-shelf [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageUrl' ></list-shelf>
+  </div>
 </div>
