@@ -1,3 +1,12 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filterInput {
+  width: 100%;
+}
+
 thead {
   color: #337AB7;
 }

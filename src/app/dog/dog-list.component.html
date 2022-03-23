@@ -1,26 +1,30 @@
 
-<div>Filter by:</div>
-<div>
-  <input type='text'
-  [(ngModel)]='listFilter' />
+<div class="flex-container">
+  <div>
+    Search By Dog Name:
+  </div>
+  <div style="margin-left: 10px;">
+    <input type='text' class="filterInput" [(ngModel)]='listFilter' />
+  </div>
 </div>
-<div *ngIf='listFilter'>
+<!-- <div *ngIf='listFilter'>
   <div>
     <h4>Filtered by: {{listFilter}}</h4>
   </div>
-  </div>
-  <div>
-    <div *ngFor='let dog of filteredDogs'>
-      <a [routerLink]="['/dogs', dog.name]">
-      <div class="gridBox">
-        <div class="photo">
-            <img [src]='dog.imageUrl' class="photoStyle" />
-        </div>
-        <div class="textContent">
-          <p class="name">{{dog.name}}</p>
-          <p class="summary">{{dog.summary}}</p>
-        </div>
+</div> -->
+
+<div>
+  <div *ngFor='let dog of filteredDogs'>
+    <a [routerLink]="['/dogs', dog.name]">
+    <div class="gridBox">
+      <div class="photo">
+        <img [src]='dog.imageUrl' class="photoStyle" />
       </div>
+      <div class="textContent">
+        <p class="name">{{dog.name}}</p>
+        <p class="summary">{{dog.summary}}</p>
+      </div>
+    </div>
     </a>
   </div>
 </div>
