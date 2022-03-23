@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { AdoptionFormComponent } from './adoption-form.component';
 import { DogDetailComponent } from './dog-detail.component';
 import { DogListComponent } from './dog-list.component';
+import { ListShelfComponent } from '../components/list-shelf/list-shelf.component';
 
 @NgModule({
   declarations: [
-    DogListComponent
+    DogListComponent,
+    ListShelfComponent
   ],
   imports: [
     RouterModule.forChild([
