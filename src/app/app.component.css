@@ -23,3 +23,8 @@ button {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container {
+  height: 100%;
+  margin: 0;
+}
