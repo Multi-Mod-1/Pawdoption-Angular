@@ -1,0 +1,8 @@
+.footer-container {
+  height: 50px;
+  margin-top: -50px;
+}
+.footer-content {
+  margin: 0 auto;
+  text-align: center;
+}
