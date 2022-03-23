@@ -1,0 +1,17 @@
+.shelf{
+    display: flex;
+    justify-content: space-between;
+    border: solid 4px lightgray;
+    margin: 8px;
+    padding: 4px;
+    padding-bottom: 1px;
+    max-width: 700px;
+}
+
+#text-content > p{
+    font-size: 14pt;
+}
+
+.photo{
+
+}
