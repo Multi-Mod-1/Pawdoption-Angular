@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 {
   "baseUrl": "http://localhost:4200/welcome",
-  "integrationFolder": "cypress/tests"
+  "integrationFolder": "cypress/integration"
 }
-=======
-{}
->>>>>>> 41ab334 (cypress testing)
