@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IDog } from '../dog';
 import { DogService } from '../dog.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './dog-list.component.html',
@@ -12,6 +13,8 @@ export class DogListComponent implements OnInit, OnDestroy {
   showImage = false;
   errorMessage = '';
   sub!: Subscription;
+  meta_tag = this.meta.addTag({name:"description", content:"A list of all available dogs at Pawdoption."});  
+
 
   private _listFilter = '';
   get listFilter(): string {
@@ -25,7 +28,10 @@ export class DogListComponent implements OnInit, OnDestroy {
   filteredDogs: IDog[] = [];
   dogs: IDog[] = [];  
 
-  constructor(private dogService: DogService) {}
+  constructor(private dogService: DogService,
+    private meta: Meta) {}
+
+
 
   performFilter(filterBy: string): IDog[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -45,6 +51,7 @@ export class DogListComponent implements OnInit, OnDestroy {
       },
       error: err => this.errorMessage = err
     });
+    this.meta_tag;
   }
 
   ngOnDestroy(): void {

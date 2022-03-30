@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IDog } from '../dog';
 import { DogService } from '../dog.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './adoption-form.component.html',
@@ -11,10 +12,13 @@ export class AdoptionFormComponent implements OnInit {
   pageTitle = 'Adoption Form';
   errorMessage = '';
   dog: IDog | undefined;
+  meta_tag = this.meta.addTag({name:"description", content:"The adoption form for a single dog."});  
+
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private dogService: DogService) {
+              private dogService: DogService,
+              private meta: Meta) {
   }
 
   ngOnInit(): void {
@@ -22,6 +26,7 @@ export class AdoptionFormComponent implements OnInit {
     if (id) {
       this.getDog(id);
     }
+    this.meta_tag;
   }
 
   getDog(id: string): void {

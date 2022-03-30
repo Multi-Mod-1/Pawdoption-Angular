@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IDog } from "../dog";
 import { DogService } from "../dog.service";
+import { Meta } from "@angular/platform-browser";
 
 @Component({
   templateUrl: './dog-detail.component.html',
@@ -12,10 +13,12 @@ export class DogDetailComponent implements OnInit {
   pageTitle = 'Dog Detail';
   errorMessage = '';
   dog: IDog | undefined;
+  meta_tag = this.meta.addTag({name:"description", content:"Information and details about a single dog."});  
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private dogService: DogService) {
+              private dogService: DogService,
+              private meta: Meta) {
   }
   
   ngOnInit(): void {
@@ -23,6 +26,7 @@ export class DogDetailComponent implements OnInit {
       if (id) {
         this.getDog(id);
       }
+      this.meta_tag;
   }
 
   getDog(id: string): void {
