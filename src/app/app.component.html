@@ -1,19 +1,25 @@
-<div class="container">
-  <nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="navbar-brand">{{ title }}</a>
-    <ul class="nav nav-pills">
-      <li>
-        <a class="nav-link" routerLinkActive="active" routerLink="/welcome"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a class="nav-link" routerLinkActive="active" routerLink="/dogs"
-          >Available Dogs</a
-        >
-      </li>
+<div>
+  <div class="container">
+    <div>
+      <div class="child">P</div>
+        <div class="child">
+          <img img src="assets/logo.svg"/>
+        </div>
+      <div class="child">WDOPTION</div>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom: 10px;">
+    <ul class="child2" style="margin: 0px;">
+      <div style="margin-right: 50px;">
+        <a href="/" class="nav_links">Home</a>
+      </div>
+      <div style="margin-right: 50px;">
+        <a href="/about" class="nav_links">About</a>
+      </div>
     </ul>
-  </nav>
+  </div>
+</div>
+<div>
   <router-outlet></router-outlet>
 </div>
 <footer></footer>

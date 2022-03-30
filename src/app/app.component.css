@@ -25,6 +25,32 @@ button {
 }
 
 .container {
-  height: 100%;
-  margin: 0;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 10px; */
+}
+
+.child {
+  display: inline-flex;
+  color: #856084;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.child2 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #856084;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
+}
+
+.nav_links{
+  text-decoration: none; 
+  color: #856084
 }

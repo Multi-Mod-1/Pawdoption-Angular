@@ -1,5 +1,5 @@
 #dog-list {
-  position: fixed;
+  position: relative;
   left: 50%;
   transform: translate(-50%);
 }
