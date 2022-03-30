@@ -3,6 +3,7 @@ body {
   background-color: #c1cad6;
   display: flex;
   justify-content: center;
+  color: #333;
 }
 
 .single-page-button {
