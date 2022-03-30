@@ -1,34 +1,5 @@
-
-<div class="flex-container">
-  <div>
-    Search By Dog Name:
+<div id="dog-list">
+  <div class="list" *ngFor='let dog of filteredDogs'>
+    <list-shelf [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageUrl' ></list-shelf>
   </div>
-  <div style="margin-left: 10px;">
-    <input type='text' class="filterInput" [(ngModel)]='listFilter' />
-  </div>
-</div>
-<!-- <div *ngIf='listFilter'>
-  <div>
-    <h4>Filtered by: {{listFilter}}</h4>
-  </div>
-</div> -->
-
-<div>
-  <div *ngFor='let dog of filteredDogs'>
-    <a [routerLink]="['/dogs', dog.name]">
-    <div class="gridBox">
-      <div class="photo">
-        <img [src]='dog.imageUrl' class="photoStyle" />
-      </div>
-      <div class="textContent">
-        <p class="name">{{dog.name}}</p>
-        <p class="summary">{{dog.summary}}</p>
-      </div>
-    </div>
-    </a>
-  </div>
-</div>
-<div *ngIf='errorMessage'
-     class='alert alert-danger'>
-  Error: {{ errorMessage }}
 </div>

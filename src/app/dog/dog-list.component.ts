@@ -9,8 +9,6 @@ import { DogService } from './dog.service';
 })
 export class DogListComponent implements OnInit, OnDestroy {
   pageTitle = 'Dog List';
-  imageWidth = 50;
-  imageMargin = 2;
   showImage = false;
   errorMessage = '';
   sub!: Subscription;

@@ -24,3 +24,7 @@ body {
   margin: 5px;
   text-decoration: none;
 }
+
+.single-page-button:hover{
+  cursor: pointer;
+}
