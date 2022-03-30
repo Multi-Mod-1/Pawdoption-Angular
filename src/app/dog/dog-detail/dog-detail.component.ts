@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IDog } from "./dog";
-import { DogService } from "./dog.service";
+import { IDog } from "../dog";
+import { DogService } from "../dog.service";
 
 @Component({
   templateUrl: './dog-detail.component.html',
