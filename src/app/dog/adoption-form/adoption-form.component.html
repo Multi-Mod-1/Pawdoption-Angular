@@ -5,7 +5,7 @@
 
 <div class="FormHeader">
   <div style="text-align: center;">
-    <img alt="cute dog" src={{dog?.imageUrl}} class="clip-circle"/> 
+    <img alt={{dog?.name}} src={{dog?.imageUrl}} class="clip-circle"/> 
     <h2>{{dog?.name}}</h2>
   </div>
   <div class="AdoptionBody">
@@ -15,7 +15,7 @@
       <label for="email_address">Your Email </label>
       <input type="email" name="email_address" id="email_address" required/>
       <label for="comments">Message</label>
-      <textarea name="comments" id="comments" maxlength="500" placeholder="Please write a message to the foster for why you want to adopt this dog" required></textarea>
+      <textarea style="color: #333;" name="comments" id="comments" maxlength="500" placeholder="Please write a message to the foster for why you want to adopt this dog" required></textarea>
     </form>
   </div>
   <div style="text-align: center;">

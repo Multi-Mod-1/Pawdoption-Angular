@@ -17,7 +17,7 @@
 
 h2 {
   /* margin-top: -10px; */
-  color: black;
+  /* color: black; */
   margin-top: -0.25em;
 
 }
@@ -57,7 +57,7 @@ input {
   border-style: none;
 }
 
-label {
+/* label {
   color: black;
-}
+} */
 

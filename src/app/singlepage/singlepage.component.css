@@ -37,7 +37,7 @@
 
 .single-page-dog-name {
   text-align: center;
-  color: black;
+  /* color: black; */
   margin-top: -0.3em;
 }
 
@@ -45,13 +45,13 @@
   text-align: left;
   grid-row: 1;
   grid-column: 2;
-  color: black;
+  /* color: black; */
   font-size: large;
   align-items: center;
 }
 
 .single-page-about-dog {
-  color: black;
+  /* color: black; */
   border-color: #856084;
   border-radius: 20px;
   border-style: solid;
@@ -75,7 +75,7 @@
   background-image: -webkit-linear-gradient(top, #84e296, #49d463);
   background-image: -o-linear-gradient(top, #84e296, #49d463);
   background-image: linear-gradient(to bottom, #84e296, #49d463);
-  color: #fff;
+  /* color: #fff; */
   border: none;
   border-radius: 30px;
   font-size: 16px;
