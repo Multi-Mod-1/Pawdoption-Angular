@@ -34,7 +34,7 @@ button {
 
 .child {
   display: inline-flex;
-  color: #856084;
+  color: #333;
   font-weight: bold;
   font-size: xx-large;
 }
@@ -44,7 +44,7 @@ button {
   flex-direction: row;
   margin-left: 20px;
   margin-right: 20px;
-  color: #856084;
+  color: #333;
   font-weight: bold;
   font-size: large;
   text-decoration: none;
@@ -52,5 +52,5 @@ button {
 
 .nav_links{
   text-decoration: none; 
-  color: #856084
+  color: #333
 }
