@@ -1,29 +1,7 @@
 <div>
-  <div class="container">
-    <div>
-      <div class="child">P</div>
-        <div class="child">
-          <img alt='pawdoption logo' src="assets/logo.svg"/>
-        </div>
-      <div class="child">WDOPTION</div>
-    </div>
+  <app-navaiagation-bar></app-navaiagation-bar>
+  <div class="app-center">
+    <router-outlet></router-outlet>
   </div>
-  <div class="container" style="padding-bottom: 10px;">
-    <ul class="child2" style="margin: 0px;">
-      <li style="list-style: none;">
-        <div style="margin-right: 50px;">
-          <a href="/" class="nav_links">Home</a>
-        </div>
-      </li>
-      <li style="list-style: none;">
-        <div style="margin-right: 50px;">
-          <a href="/about" class="nav_links">About</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <footer></footer>
 </div>
-<div class="app-center">
-  <router-outlet></router-outlet>
-</div>
-<footer></footer>
