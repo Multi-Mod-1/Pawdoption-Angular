@@ -1,4 +1,4 @@
-.single-page{
+.single-page {
   display: grid;
   grid-template-columns: auto;
 }
@@ -26,7 +26,7 @@
 .single-page-dog-img {
   grid-row: 1;
   grid-column: 1;
-  width: 30vw; 
+  width: 30vw;
   clip-path: circle();
   /* object-fit: cover;
   /* border-radius: 100%; */
@@ -41,14 +41,13 @@
   margin-top: -0.3em;
 }
 
-.single-page-information{
+.single-page-information {
   text-align: left;
   grid-row: 1;
   grid-column: 2;
   color: black;
   font-size: large;
   align-items: center;
-
 }
 
 .single-page-about-dog {
@@ -66,4 +65,3 @@
   font-size: medium;
   /* display: inline-block; */
 }
-
