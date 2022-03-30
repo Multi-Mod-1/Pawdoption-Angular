@@ -1,0 +1,12 @@
+<div class="shelf" [routerLink]="['/dogs', name]">
+  <div id="text-content">
+    <h1 class="name">{{name}}</h1>
+    <p class="detail">{{summary}}</p>
+  </div>
+  <div class="photo">
+    <img [src]='imagePath' 
+          alt={{name}}
+         [style.width.px]='imageWidth'
+         [style.margin.px]='imageMargin'/>
+  </div>
+</div>

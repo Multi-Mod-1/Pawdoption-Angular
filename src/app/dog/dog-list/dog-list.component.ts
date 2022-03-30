@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IDog } from './dog';
-import { DogService } from './dog.service';
+import { IDog } from '../dog';
+import { DogService } from '../dog.service';
 
 @Component({
   templateUrl: './dog-list.component.html',
@@ -9,8 +9,6 @@ import { DogService } from './dog.service';
 })
 export class DogListComponent implements OnInit, OnDestroy {
   pageTitle = 'Dog List';
-  imageWidth = 50;
-  imageMargin = 2;
   showImage = false;
   errorMessage = '';
   sub!: Subscription;

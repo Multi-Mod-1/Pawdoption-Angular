@@ -1,0 +1,23 @@
+.shelf{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: solid 4px lightgray;
+  margin: 8px;
+  padding: 4px;
+  padding-bottom: 1px;
+  max-width: 700px;
+}
+
+.shelf:hover{
+  cursor: pointer;
+  box-shadow: 4px;
+}
+
+#text-content > p{
+  font-size: 14pt;
+}
+
+/* .photo{
+  height: 100%;
+} */

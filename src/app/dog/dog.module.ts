@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { AdoptionFormComponent } from './adoption-form.component';
-import { DogDetailComponent } from './dog-detail.component';
-import { DogListComponent } from './dog-list.component';
+import { AdoptionFormComponent } from './adoption-form/adoption-form.component';
+import { DogDetailComponent } from './dog-detail/dog-detail.component';
+import { DogListComponent } from './dog-list/dog-list.component';
+import { ListShelfComponent } from './list-shelf/list-shelf.component';
 
 @NgModule({
   declarations: [
-    DogListComponent
+    DogListComponent,
+    ListShelfComponent
   ],
   imports: [
     RouterModule.forChild([

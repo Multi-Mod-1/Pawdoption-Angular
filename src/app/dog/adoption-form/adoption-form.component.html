@@ -1,11 +1,11 @@
-<div class='card-header'>
+<!-- <div class='card-header'>
   {{pageTitle + ': ' + dog?.name}}
-</div>
+</div> -->
 
 
 <div class="FormHeader">
-  <div>
-    <img alt="cute dog" src={{dog?.imageUrl}} class="clip-circle"/> 
+  <div style="text-align: center;">
+    <img alt={{dog?.name}} src={{dog?.imageUrl}} class="clip-circle"/> 
     <h2>{{dog?.name}}</h2>
   </div>
   <div class="AdoptionBody">
@@ -15,21 +15,17 @@
       <label for="email_address">Your Email </label>
       <input type="email" name="email_address" id="email_address" required/>
       <label for="comments">Message</label>
-      <textarea name="comments" id="comments" maxlength="500" placeholder="Please write a message to the foster for why you want to adopt this dog" required></textarea>
+      <textarea style="color: #333;" name="comments" id="comments" maxlength="500" placeholder="Please write a message to the foster for why you want to adopt this dog" required></textarea>
     </form>
   </div>
-  <div class='card-footer'>
-    <button class='btn btn-outline-secondary'
-            style='width:80px'
+  <div style="text-align: center;">
+    <button class='single-page-button'
             (click)='onBack()'>
-      <i class='fa fa-chevron-left'></i> Back
+      <i></i> Back To Details
     </button>
-  </div>
-  <div class='card-footer'>
-    <button class='btn btn-outline-secondary'
-            style='width:80px'
+    <button class='single-page-button'
             (click)='onSubmit()'>
-      <i class='fa fa-chevron-left'></i> Submit Application
+      <i></i> Submit Application
     </button>
   </div>
 </div>

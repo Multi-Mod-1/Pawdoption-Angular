@@ -1,0 +1,40 @@
+<div class="single-page">
+  <div id="single-page-card">
+    <div class="single-page-header">
+      <div>
+        <img
+            class="single-page-dog-img"
+            [src]='dog?.imageUrl'
+            alt={{dog?.name}}
+          />
+        <h2 class="single-page-dog-name">{{dog?.name}}</h2>
+      </div>
+      <div class="single-page-information">
+        <p>
+          Sex: {{dog?.sex}}
+          <br/>
+          Age: {{dog?.age}}
+          <br/>
+          Breed: {{dog?.breed}}
+          <br/>
+          Location: {{dog?.location}}
+        </p>
+      </div>
+    </div>
+    <div class="single-page-about-dog">
+      <p>
+        {{dog?.description}}
+      </p>
+    </div>
+    <div style="text-align: center;">
+      <button class='single-page-button'
+              (click)='onBack()'>
+        <i></i> Back
+      </button>
+      <button class='single-page-button'
+              (click)='toForm()'>
+        <i></i> Interested?
+      </button>
+    </div>
+  </div>
+</div>
