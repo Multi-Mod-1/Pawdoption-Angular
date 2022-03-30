@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IDog } from './dog';
-import { DogService } from './dog.service';
+import { IDog } from '../dog';
+import { DogService } from '../dog.service';
 
 @Component({
   templateUrl: './dog-list.component.html',

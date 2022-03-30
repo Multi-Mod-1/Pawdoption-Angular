@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DogListComponent } from './dog/dog-list.component';
+import { DogListComponent } from './dog/dog-list/dog-list.component';
 import { DogModule } from './dog/dog.module';
 import { AboutComponent } from './about/about.component';
 
