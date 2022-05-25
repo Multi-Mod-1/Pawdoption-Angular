@@ -21,12 +21,16 @@ export class DogService {
       );
   }
 
-  getDog(id: string): Observable<IDog | undefined> {
-    return this.getDogs()
-      .pipe(
-        map((dogs: IDog[]) => dogs.find(d => d.name === id))
-      );
+  getDog(id: number): Observable<IDog> {
+    return this.http.get<IDog>(`${this.dogUrl}/${id}`)
+      // .pipe(
+      //   map((dogs: IDog[]) => dogs.find(d => d.name === id))
+      // );
   }
+
+  // getSingleAuthorSinglePoem(id: number, poemId: number): Observable<AuthorSinglePoemRoot> {
+  //   return this.http.get<AuthorSinglePoemRoot>(`${this.authorLink}/${id}/poems/${poemId}`)
+  // }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';

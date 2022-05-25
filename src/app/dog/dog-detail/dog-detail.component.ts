@@ -22,19 +22,19 @@ export class DogDetailComponent implements OnInit {
   }
   
   ngOnInit(): void {
-      const id = String(this.route.snapshot.paramMap.get('id'));
+      const id = Number(this.route.snapshot.paramMap.get('id'));
       if (id) {
         this.getDog(id);
       }
       this.meta_tag;
   }
 
-  getDog(id: string): void {
+  getDog(id: number): void {
     this.dogService.getDog(id).subscribe({
       next: dog => this.dog = dog,
       error: err => this.errorMessage = err
     });
-    console.log(this.dog)
+    console.log("Yooooooo!")
   }
 
   onBack(): void {

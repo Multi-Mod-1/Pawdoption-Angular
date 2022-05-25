@@ -9,7 +9,8 @@ import { Component, Input } from '@angular/core';
 export class ListShelfComponent {
     imageWidth: number = 200;
     imageMargin: number = 2;
-
+    
+    @Input() id: number = 0;
     @Input() name: string = '';
     @Input() summary: string = '';
     @Input() imagePath: string = '';
