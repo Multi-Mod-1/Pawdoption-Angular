@@ -9,14 +9,26 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AuthModule } from '@auth0/auth0-angular';
+// import { AuthButtonComponent } from './login/auth-login.component';
+
 @NgModule({
-  declarations: [AppComponent, FooterComponent, NavigationBarComponent],
+  declarations: [AppComponent, 
+    FooterComponent, 
+    NavigationBarComponent, 
+    // AuthButtonComponent
+  ],
+
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
+    AuthModule.forRoot({
+      domain: 'dev-ptb9wvr7.us.auth0.com',
+      clientId: 'sHk8l4keXD84veqaqD9EvicqCljzYNmr'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

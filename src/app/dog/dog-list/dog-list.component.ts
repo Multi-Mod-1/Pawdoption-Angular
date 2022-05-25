@@ -31,8 +31,6 @@ export class DogListComponent implements OnInit, OnDestroy {
   constructor(private dogService: DogService,
     private meta: Meta) {}
 
-
-
   performFilter(filterBy: string): IDog[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.dogs.filter((dog: IDog) =>

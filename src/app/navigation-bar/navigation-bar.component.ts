@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+
 
 @Component({
   selector: 'app-navaiagation-bar',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class NavigationBarComponent {
   title = 'Pawdoption';
+  constructor(public auth: AuthService) {}
 }

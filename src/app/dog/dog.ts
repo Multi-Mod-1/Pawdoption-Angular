@@ -6,5 +6,5 @@ export interface IDog {
   location: string;
   summary: string;
   description: string;
-  imageUrl: string;
+  imageURL: string;
 }

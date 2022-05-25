@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DogListComponent } from './dog/dog-list/dog-list.component';
 import { DogModule } from './dog/dog.module';
 import { AboutComponent } from './about/about.component';
+// import { AuthButtonComponent } from './login/auth-login.component';
 
 const routes: Routes = [
   {path: 'dogs', component: DogListComponent},
   {path: 'about', component: AboutComponent},
+  // {path: 'login', component: AuthButtonComponent},
   { path: '', redirectTo: 'dogs', pathMatch: 'full' },
   { path: '**', redirectTo: 'dogs', pathMatch: 'full' }
 ];
