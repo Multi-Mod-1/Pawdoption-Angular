@@ -1,5 +1,15 @@
-<div id="dog-list">
-  <div class="list" *ngFor='let dog of filteredDogs'>
-    <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
+
+<ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
+  <button>DELETE ALL DOGS >:)</button>
+  <div id="dog-list">
+    <div class="list" *ngFor='let dog of filteredDogs'>
+      <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #notLoggedIn>
+  <div>
+    <p>Please log in to view our pups 🐕</p>
+  </div>
+</ng-template>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -9,5 +10,8 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class NavigationBarComponent {
   title = 'Pawdoption';
-  constructor(public auth: AuthService) {}
+  // constructor(public auth: AuthService) {}
+
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+
 }
