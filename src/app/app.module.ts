@@ -10,12 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 // import { AuthButtonComponent } from './login/auth-login.component';
 
 @NgModule({
   declarations: [AppComponent, 
     FooterComponent, 
-    NavigationBarComponent, 
+    NavigationBarComponent, LoginComponent, UserComponent, 
     // AuthButtonComponent
   ],
 
@@ -26,8 +29,7 @@ import { AuthModule } from '@auth0/auth0-angular';
     FormsModule,
     CommonModule,
     AuthModule.forRoot({
-      domain: 'dev-ptb9wvr7.us.auth0.com',
-      clientId: 'sHk8l4keXD84veqaqD9EvicqCljzYNmr'
+      ...env.auth
     }),
   ],
   providers: [],

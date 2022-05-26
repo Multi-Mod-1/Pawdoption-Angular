@@ -1,0 +1,43 @@
+.welcomeContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "welcomeText welcomeText"
+    "welcomeLogo publicLogin"
+    "welcomeLogo developerLogin";
+}
+
+.welcomeText { grid-area: welcomeText; }
+
+.welcomeLogo { grid-area: welcomeLogo; }
+
+.publicLogin {
+  justify-self: start;
+  grid-area: publicLogin;
+}
+
+.developerLogin {
+  justify-self: start;
+  grid-area: developerLogin;
+}
+
+
+
+
+.logoTextContainer {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 10px; */
+}
+
+.logoTextChild {
+  display: inline-flex;
+  color: #333;
+  font-weight: bold;
+  font-size: xx-large;
+}

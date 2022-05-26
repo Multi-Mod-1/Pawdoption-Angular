@@ -28,10 +28,6 @@ export class DogService {
       // );
   }
 
-  // getSingleAuthorSinglePoem(id: number, poemId: number): Observable<AuthorSinglePoemRoot> {
-  //   return this.http.get<AuthorSinglePoemRoot>(`${this.authorLink}/${id}/poems/${poemId}`)
-  // }
-
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {

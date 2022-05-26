@@ -21,13 +21,16 @@
     </li>
     <li style="list-style: none">
       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-        <div style="margin-right: 50px">
-          <a (click)="auth.logout({ returnTo: document.location.origin })" class="nav_links">Log out</a>
+        <div style="margin-right: 50px" >
+          <div *ngIf="auth.user$ | async as user">
+            <a (click)="toProfile()" class="nav_links">{{user.name}}</a>
+          </div>
+          <!-- <a (click)="auth.logout({ returnTo: document.location.origin })" class="nav_links">Log out</a> -->
         </div>
       </ng-container>
   
       <ng-template #loggedOut>
-        <div style="margin-right: 50px">
+        <div style="margin-right: 50px" class="standardLink">
           <a (click)="auth.loginWithRedirect()" class="nav_links">Login</a>
         </div>
       </ng-template>

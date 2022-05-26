@@ -1,6 +1,18 @@
+<div id="dog-list">
+  <div class="list" *ngFor='let dog of filteredDogs'>
+    <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
+  </div>
+</div>
 
-<ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
-  <button>DELETE ALL DOGS >:)</button>
+<!-- <ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
+  <ul *ngIf="auth.user$ | async as user">
+    <li>{{ user.name }}</li>
+    <li>{{ user.email }}</li>
+    <li>
+      <img src={{user.picture}}/>
+    </li>
+    <li>{{user.sub}} </li>
+  </ul>
   <div id="dog-list">
     <div class="list" *ngFor='let dog of filteredDogs'>
       <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
@@ -12,4 +24,4 @@
   <div>
     <p>Please log in to view our pups 🐕</p>
   </div>
-</ng-template>
+</ng-template> -->
