@@ -1,7 +1,8 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, map, tap } from 'rxjs/operators';
+import { TokenService } from "../token.service";
 import { IDog } from "./dog";
 
 @Injectable({
@@ -9,16 +10,19 @@ import { IDog } from "./dog";
 })
 export class DogService {
 
-  private dogUrl = 'http://localhost:3000/api/dogs'
+  private dogUrl = 'http://localhost:3000/api/dogs';
+  myToken!: String;
+
   // private dogUrl = '../assets/dogs/dogs.json';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private token: TokenService) { }
 
   getDogs(): Observable<IDog[]> {
     return this.http.get<IDog[]>(this.dogUrl)
-      .pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+      // .pipe(
+      //   tap(data => console.log('All: ', JSON.stringify(data))),
+      //   catchError(this.handleError)
+      // );
   }
 
   getDog(id: number): Observable<IDog> {
@@ -26,6 +30,30 @@ export class DogService {
       // .pipe(
       //   map((dogs: IDog[]) => dogs.find(d => d.name === id))
       // );
+            .pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+
+  deleteDog(id: number): void {
+    this.token.getToken().subscribe({
+      next: data => {
+        this.myToken = data;
+        return this.http.delete(`${this.dogUrl}/${id}`, {
+          headers: new HttpHeaders()
+          .set('Authorization', `Bearer ${this.myToken}`)
+          .set('content-type', 'application/json')
+        }).subscribe({
+              next: data => {
+                  console.log('Delete successful');
+              },
+              error: error => {
+                  console.error('There was an error!', error);
+              }
+            });
+      }
+    })
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {

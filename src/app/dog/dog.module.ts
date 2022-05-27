@@ -11,11 +11,12 @@ import { ListShelfComponent } from './list-shelf/list-shelf.component';
 @NgModule({
   declarations: [
     DogListComponent,
-    ListShelfComponent
+    ListShelfComponent,
+    DogDetailComponent
   ],
   imports: [
     RouterModule.forChild([
-      { path: 'dogs', component: DogListComponent },
+      // { path: 'dogs', component: DogListComponent },
       { path: 'dogs/:id', component: DogDetailComponent},
       { path: 'dogs/:id/form', component: AdoptionFormComponent}
       // {

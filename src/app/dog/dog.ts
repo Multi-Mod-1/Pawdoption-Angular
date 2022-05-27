@@ -10,9 +10,18 @@ export interface IDog {
   LocationId: number
   UserId: number
   Location: Location
+  User: User
 }
 
 export interface Location {
   id: number
   state: string
+}
+
+export interface User {
+  id: number
+  firstName: string
+  lastName: string
+  email: string
+  LocationId: number
 }
