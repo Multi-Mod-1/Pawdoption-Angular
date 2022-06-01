@@ -65,3 +65,8 @@
   font-size: medium;
   /* display: inline-block; */
 }
+
+.deleteButtonDiv {
+  text-align: center;
+  margin: 5px;
+}

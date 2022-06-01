@@ -4,6 +4,9 @@ import { HttpClient } from "@angular/common/http";
 import { Subscription } from 'rxjs';
 import { TokenService } from '../token.service';
 import { DOCUMENT } from '@angular/common';
+import { UserService } from '../user.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user',
@@ -14,13 +17,18 @@ export class UserComponent implements OnInit {
 
   sub!: Subscription;
   token: String | undefined;
+  userDB!: User;
 
   constructor(
     @Inject(DOCUMENT) public document: Document,
     public auth: AuthService, 
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getUser();
   }
 
   getUserToken(): void {
@@ -33,6 +41,17 @@ export class UserComponent implements OnInit {
     if (newLocal) {
       newLocal.style.display = "block";
     }
+  }
+
+  getUser(): void {
+    const email = String(this.route.snapshot.paramMap.get('email'));
+    this.userService.getUserByEmail(email).subscribe(
+      data => this.userDB = data
+    )
+  }
+
+  toUploadForm(): void {
+    this.router.navigateByUrl(`/user/${this.userDB.email}/upload`);
   }
 
   copyToClipboard(el: HTMLDivElement) {

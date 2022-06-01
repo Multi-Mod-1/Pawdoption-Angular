@@ -5,6 +5,19 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { TokenService } from "../token.service";
 import { IDog } from "./dog";
 
+export interface Dog {
+  id: number
+  name: string
+  sex: string
+  age: number
+  breed: string
+  summary: string
+  description: string
+  imageURL: string
+  LocationId: number
+  UserId: number
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +67,14 @@ export class DogService {
             });
       }
     })
+  }
+
+  postDog(dog: Dog): Observable<Dog> {
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(dog);
+    console.log(body)
+    return this.http.post<Dog>(`${this.dogUrl}`, body, {'headers':headers})
+    // .subscribe(result => { console.log("Posted" + JSON.stringify(result)); }, error => console.error(error));       
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {

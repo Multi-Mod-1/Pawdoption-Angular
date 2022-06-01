@@ -1,4 +1,5 @@
 <ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
+<button (click)="toUploadForm()" class="single-page-button">Add New Dog</button>
 <button (click)="auth.logout({ returnTo: document.location.origin })" class="single-page-button">Log out</button>
 
   <ul *ngIf="auth.user$ | async as user">
@@ -6,7 +7,7 @@
       <img src={{user.picture}}/>
     </li>
     <li>{{ user.name }}</li>
-    <li>{{ user.email }}</li>
+    <li>{{ user.email }} {{userDB?.email}}</li>
   </ul>
   <button class="single-page-button" (click)="getUserToken()">Click here to get JWT</button>
   <div id="tokenAll" style="text-align: center;">
