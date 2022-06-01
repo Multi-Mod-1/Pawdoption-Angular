@@ -13,12 +13,13 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { DogDetailComponent } from './dog/dog-detail/dog-detail.component';
 // import { AuthButtonComponent } from './login/auth-login.component';
 
 @NgModule({
   declarations: [AppComponent, 
     FooterComponent, 
-    NavigationBarComponent, LoginComponent, UserComponent, 
+    NavigationBarComponent, LoginComponent, UserComponent,
     // AuthButtonComponent
   ],
 

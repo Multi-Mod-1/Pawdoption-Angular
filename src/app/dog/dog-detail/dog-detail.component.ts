@@ -6,6 +6,8 @@ import { Meta } from "@angular/platform-browser";
 import { AuthService } from "@auth0/auth0-angular";
 import { catchError, map, tap } from "rxjs";
 import { Subscription } from "rxjs";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TokenService } from "../../token.service";
 
 @Component({
   templateUrl: './dog-detail.component.html',
@@ -20,10 +22,15 @@ export class DogDetailComponent implements OnInit {
   userEmail!: string | undefined;
   dogEmail!: string;
 
+  private dogUrl = 'http://localhost:3000/api/dogs';
+  myToken!: String;
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dogService: DogService,
               public auth: AuthService, 
+              private http: HttpClient,
+              private token: TokenService,
               private meta: Meta) {
   }
   
@@ -31,17 +38,9 @@ export class DogDetailComponent implements OnInit {
       const id = Number(this.route.snapshot.paramMap.get('id'));
       if (id) {
         this.getDog(id);
-        console.log("waited for dog: " + this.dogEmail)
         this.getUser();
-        console.log("waited for user: " + this.userEmail)
-        this.showButton(this.dogEmail, this.userEmail);
       }
       this.meta_tag;
-      console.log(Object.keys(this.auth))
-      // console.log(document.getElementById("deleteDog"));
-      // <div *ngIf="auth.isAuthenticated$ | async">
-      //   <button (click)="removeDog()">Delete This Dog</button>
-      // </div>
   }
 
   getDog(id: number): void {
@@ -62,12 +61,6 @@ export class DogDetailComponent implements OnInit {
     })
   }
 
-  async showButton(de: string, ue: string | undefined): Promise<void> {
-    if (de && ue) {
-      console.log("BOOM " + de + " " + ue);
-    }
-  }
-
   onBack(): void {
     this.router.navigate(['/dogs']);
   }
@@ -80,11 +73,29 @@ export class DogDetailComponent implements OnInit {
   removeDog(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
-      this.dogService.deleteDog(id);
-      this.router.navigateByUrl('/dogs')
-      .then(() => {
+      this.token.getToken().subscribe({
+        next: data => {
+          this.myToken = data;
+          return this.http.delete(`${this.dogUrl}/${id}`, {
+            headers: new HttpHeaders()
+            .set('Authorization', `Bearer ${this.myToken}`)
+            .set('content-type', 'application/json')
+          }).subscribe({
+                next: moreData => {
+                    console.log('Delete successful');
+                    this.router.navigateByUrl('/dogs')
+                },
+                error: error => {
+                    console.error('There was an error!', error);
+                }
+              });
+        }
+      })
+
+      // this.dogService.deleteDog(id);
+      // .then(() => {
         // window.location.reload();
-      });
+      // });
     }
   }
 

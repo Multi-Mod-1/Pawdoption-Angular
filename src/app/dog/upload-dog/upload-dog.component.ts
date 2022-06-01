@@ -5,7 +5,8 @@ import { UserService } from 'src/app/user.service';
 import { User } from '../../user'
 import { Dog } from '../dog';
 import { DogService } from '../dog.service';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-upload-dog',
   templateUrl: './upload-dog.component.html',
@@ -92,8 +93,7 @@ export class UploadDogComponent implements OnInit {
       const body=JSON.stringify(this.newDog);
       console.log(body)
       this.http.post<Dog>(`http://localhost:3000/api/dogs`, body, {'headers':headers})
-      .subscribe(result => { console.log("Posted" + JSON.stringify(result)); }, error => console.error(error));       
-      // this.dogService.postDog(this.newDog);
+      .subscribe(result => { console.log("Posted" + JSON.stringify(result)); }, error => console.error(error));
       this.router.navigateByUrl('/dogs')
     }
 
