@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-navaiagation-bar',
@@ -7,4 +11,15 @@ import { Component } from '@angular/core';
 })
 export class NavigationBarComponent {
   title = 'Pawdoption';
+  // constructor(public auth: AuthService) {}
+
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private router: Router) {}
+
+  toLogin(): void {
+    this.router.navigate(['/login'])
+  }
+
+  toProfile(): void {
+    this.router.navigate(['/user'])
+  }
 }

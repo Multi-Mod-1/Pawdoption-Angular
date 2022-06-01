@@ -1,5 +1,27 @@
 <div id="dog-list">
   <div class="list" *ngFor='let dog of filteredDogs'>
-    <list-shelf [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageUrl' ></list-shelf>
+    <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
   </div>
 </div>
+
+<!-- <ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
+  <ul *ngIf="auth.user$ | async as user">
+    <li>{{ user.name }}</li>
+    <li>{{ user.email }}</li>
+    <li>
+      <img src={{user.picture}}/>
+    </li>
+    <li>{{user.sub}} </li>
+  </ul>
+  <div id="dog-list">
+    <div class="list" *ngFor='let dog of filteredDogs'>
+      <list-shelf [id]='dog.id' [name]='dog.name' [summary]='dog.summary' [imagePath]='dog.imageURL' ></list-shelf>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #notLoggedIn>
+  <div>
+    <p>Please log in to view our pups 🐕</p>
+  </div>
+</ng-template> -->

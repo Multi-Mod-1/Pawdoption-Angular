@@ -1,10 +1,27 @@
 export interface IDog {
-  name: string;
-  sex: string;
-  age: number;
-  breed: string;
-  location: string;
-  summary: string;
-  description: string;
-  imageUrl: string;
+  id: number
+  name: string
+  sex: string
+  age: number
+  breed: string
+  summary: string
+  description: string
+  imageURL: string
+  LocationId: number
+  UserId: number
+  Location: Location
+  User: User
+}
+
+export interface Location {
+  id: number
+  state: string
+}
+
+export interface User {
+  id: number
+  firstName: string
+  lastName: string
+  email: string
+  LocationId: number
 }

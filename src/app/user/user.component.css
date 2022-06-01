@@ -1,0 +1,14 @@
+#tokenDiv {
+  font-family: 'Roboto Mono', sans-serif;
+  color: darkslategray;
+  inline-size: 500px;
+  border-radius: 10px;
+  border-color: ;
+  padding: 5px;
+  overflow-wrap: break-word;
+  background-color: lightgray;
+}
+
+#tokenAll {
+  display: none;
+}

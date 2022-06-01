@@ -1,24 +1,22 @@
-<div class="card">
-  <div class="card-header">
-    {{ pageTitle }}
-  </div>
-  <div class="card-body">
-    <div class="container-fluid">
-      <div class="text-center">
-        <img
-          src="./assets/images/logo.svg"
-          id="pawdoption-logo"
-          class="img-responsive center-block"
-          style="max-height: 300px; padding-bottom: 50px"
-        />
-      </div>
-      <div class="text-center">Developed by:</div>
-      <div class="text-center">
-        <h3>Javier Montero</h3>
-        <h3>Lucas Freitas</h3>
-        <h3>Eric Davenport, Jr.</h3>
-        <h3>CJ Garcia</h3>
+<div class="welcomeContainer">
+  <div class="welcomeText" style="margin-top: 20px">
+    <div class="logoTextContainer">
+      <div>
+        <div class="logoTextChild">Welcome to P</div>
+        <div class="logoTextChild">
+          <img alt="pawdoption logo" src="assets/logo.svg" />
+        </div>
+        <div class="logoTextChild">WDOPTION</div>
       </div>
     </div>
+  </div>
+  <div class="welcomeLogo">
+    <img alt="pawdoption logo" src="assets/logo.svg" width="75%" height="75%"/>
+  </div>
+  <div class="publicLogin">
+    <button (click)="toHome()" class="single-page-button">Continue to Public Database</button>
+  </div>
+  <div class="developerLogin">
+    <button (click)="auth.loginWithRedirect()" class="single-page-button">Continue to Developer Log-in</button>
   </div>
 </div>

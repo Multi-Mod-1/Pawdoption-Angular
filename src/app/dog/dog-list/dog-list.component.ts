@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { IDog } from '../dog';
 import { DogService } from '../dog.service';
 import { Meta } from '@angular/platform-browser';
+import { AuthService } from '@auth0/auth0-angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   templateUrl: './dog-list.component.html',
@@ -29,9 +31,10 @@ export class DogListComponent implements OnInit, OnDestroy {
   dogs: IDog[] = [];  
 
   constructor(private dogService: DogService,
-    private meta: Meta) {}
-
-
+    private route: ActivatedRoute,
+    private meta: Meta,
+    public auth: AuthService,
+    private router: Router) {}
 
   performFilter(filterBy: string): IDog[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -53,6 +56,8 @@ export class DogListComponent implements OnInit, OnDestroy {
     });
     this.meta_tag;
   }
+
+
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
