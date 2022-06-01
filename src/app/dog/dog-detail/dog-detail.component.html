@@ -38,5 +38,12 @@
     </div>
   </div>
 </div>
-<div id="deleteDog">
+<div *ngIf="auth.isAuthenticated$ | async">
+  <div *ngIf="auth.user$ | async as user">
+    <div *ngIf="(user.email | lowercase) == (dog.User.email | lowercase)">
+      <div id="deleteDog">
+        <button (click)="removeDog()">Delete This Dog</button>
+      </div>
+    </div>
+  </div>
 </div>
