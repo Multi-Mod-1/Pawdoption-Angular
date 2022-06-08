@@ -83,7 +83,7 @@ export class UploadDogComponent implements OnInit {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
 
-      // console.log(this.selectedFile.file)
+      console.log(this.selectedFile.file)
       // const formData = new FormData();
 
       // formData.append('image', this.selectedFile.file);
