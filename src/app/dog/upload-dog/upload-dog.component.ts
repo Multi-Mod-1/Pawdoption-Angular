@@ -7,6 +7,10 @@ import { Dog } from '../dog';
 import { DogService } from '../dog.service';
 import { HttpClient } from '@angular/common/http';
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
+
 @Component({
   selector: 'app-upload-dog',
   templateUrl: './upload-dog.component.html',
@@ -16,6 +20,8 @@ export class UploadDogComponent implements OnInit {
 
   userDB: User | undefined;
   newDog = new Dog();
+
+  selectedFile!: ImageSnippet;
 
   dogName = new FormControl();
   dogImageUrl = new FormControl();
@@ -66,6 +72,26 @@ export class UploadDogComponent implements OnInit {
       dogImage.style.display = "none"
     }
     dogImage.src = this.dogImageUrl.value
+    console.log(this.dogImageUrl.value);
+  }
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      // console.log(this.selectedFile.file)
+      // const formData = new FormData();
+
+      // formData.append('image', this.selectedFile.file);
+
+      // console.log(formData)
+    });
+
+    reader.readAsDataURL(file);
   }
 
   submitDog(): void {
@@ -85,10 +111,11 @@ export class UploadDogComponent implements OnInit {
       this.newDog.breed = this.dogBreed.value
       this.newDog.summary = this.dogSummary.value
       this.newDog.description = this.dogDescription.value
-      this.newDog.imageURL = this.dogImageUrl.value;  
+      // this.newDog.imageURL = this.dogImageUrl.value; 
+      this.newDog.imageURL = this.selectedFile.file; 
       this.newDog.LocationId = this.userDB.LocationId;
       this.newDog.UserId = this.userDB.id;
-      console.log(this.newDog)
+      // console.log(this.newDog)
       const headers = { 'content-type': 'application/json'}  
       const body=JSON.stringify(this.newDog);
       console.log(body)
