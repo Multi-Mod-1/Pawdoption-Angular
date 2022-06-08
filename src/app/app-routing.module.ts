@@ -10,7 +10,8 @@ import { UserComponent } from './user/user.component';
 import { UploadDogComponent } from './dog/upload-dog/upload-dog.component';
 
 const routes: Routes = [
-  {path: '', component: WelcomeComponent},
+  // {path: '', component: WelcomeComponent},
+  {path: '', component: DogListComponent},
   {path: 'dogs', component: DogListComponent},
   {path: 'about', component: AboutComponent},
   {path: 'login', component: LoginComponent},
