@@ -25,3 +25,16 @@ export interface User {
   email: string
   LocationId: number
 }
+
+export class Dog {
+  id!: number
+  name!: string
+  sex!: string
+  age!: number
+  breed!: string
+  summary!: string
+  description!: string
+  imageURL!: string
+  LocationId!: number
+  UserId!: number
+}

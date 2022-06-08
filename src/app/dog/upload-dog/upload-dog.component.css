@@ -1,0 +1,84 @@
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". imagePlaceholder ."
+    "dog-name dog-name dog-name"
+    "dog-image dog-image dog-image"
+    "dog-sex dog-age dog-breed"
+    "dog-description dog-description dog-description"
+    "dog-summary dog-summary dog-summary"
+    "dog-location dog-location dog-location"
+    ". submitButton .";
+}
+
+.dog-name {
+  justify-self: start;
+  grid-area: dog-name;
+}
+
+.dog-image {
+  justify-self: start;
+  grid-area: dog-image;
+}
+
+.imagePlaceholder {
+  grid-area: imagePlaceholder;
+}
+
+.imageStyle {
+  width: 200px;
+  border-width: 1px;
+  border-color: aliceblue;
+  border-style: solid;
+  display: none;
+}
+
+.dog-sex {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "male female";
+  justify-self: stretch;
+  grid-area: dog-sex;
+}
+
+.male { grid-area: male; }
+
+.female { grid-area: female; }
+
+.dog-age {
+  justify-self: start;
+  grid-area: dog-age;
+}
+
+.dog-breed {
+  justify-self: start;
+  grid-area: dog-breed;
+}
+
+.dog-description { grid-area: dog-description; }
+
+.descriptionStyle {
+  width: 100%;
+  height: 100%;
+  /* background-color: #F8F8FF; */
+  /* font-family: "Oxygen", sans-serif; */
+  /* font-size: medium; */
+  outline: none;
+}
+
+.dog-summary { grid-area: dog-summary; }
+
+.dog-location {
+  justify-self: start;
+  grid-area: dog-location;
+}
+
+.submitButton {
+  grid-area: submitButton;
+}
