@@ -31,3 +31,14 @@ body {
 .single-page-button:hover{
   cursor: pointer;
 }
+
+.standardBorder {
+  /* text-align: center; */
+  border-radius: 20px;
+  border-color: #FFC93F;
+  background-color: white;
+  border-style: solid;
+  /* width: 50vw; */
+  padding: 10px;
+  margin: 10px;
+}

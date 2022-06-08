@@ -1,18 +1,60 @@
 <ng-container *ngIf="auth.isAuthenticated$ | async; else notLoggedIn">
-<button (click)="toUploadForm()" class="single-page-button">Add New Dog</button>
-<button (click)="auth.logout({ returnTo: document.location.origin })" class="single-page-button">Log out</button>
+  <div *ngIf="auth.user$ | async as user">
+    <div class="flex-rows">
+      <div class="flex-rows-child">
+        <div class="standardBorder">
+          <img src={{user.picture}} style="clip-path:circle()"/>
+          <p>{{ user.name }}</p>
+          <p>{{ user.email }}</p>
+        </div>
+      </div>
+      <div class="flex-rows-break flex-rows-break-invisible"></div>
+      <div class="flex-rows-child" style="align-items: center;">
+        <div class="standardBorder">
+          <button class="single-page-button" (click)="getUserToken()">Click here to get JWT</button>
+          <button (click)="toUploadForm()" class="single-page-button">Add New Dog</button>
+          <button (click)="auth.logout({ returnTo: document.location.origin })" class="single-page-button">Log out</button>
+          <div id="tokenAll">
+            <div #tokenDiv id="tokenDiv">
+              {{token}}
+            </div>
+            <button (click)="copyToClipboard(tokenDiv)" class="single-page-button">Copy Text</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container">
+      <div class="item">
+        <div class="picture">
+        </div>
+        <div class="name">
+        </div>
+        <div class="email">
+        </div>
+      </div>
+      <div class="break"></div>
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item" id="tokenAll">
+        <div class="token">
+        </div>
+        <div class="copyTokenButton">
+        </div>
+      </div>
+    </div> -->
 
-  <ul *ngIf="auth.user$ | async as user">
-    <li>
-      <img src={{user.picture}}/>
-    </li>
-    <li>{{ user.name }}</li>
-    <li>{{ user.email }} {{userDB?.email}}</li>
-  </ul>
-  <button class="single-page-button" (click)="getUserToken()">Click here to get JWT</button>
-  <div id="tokenAll" style="text-align: center;">
-    <div #tokenDiv id="tokenDiv">{{token}}</div>
-    <button (click)="copyToClipboard(tokenDiv)" class="single-page-button">Copy Text</button>
+    <!-- <div class="container">
+      <div class="profile">
+        <div style="text-align: center;">
+        </div>
+      </div>
+      <div class="actions">
+      </div>
+    </div> -->
   </div>
 </ng-container>
 

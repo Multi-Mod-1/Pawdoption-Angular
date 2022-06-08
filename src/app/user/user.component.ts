@@ -39,7 +39,7 @@ export class UserComponent implements OnInit {
     })
     const newLocal = this.document.getElementById('tokenAll')
     if (newLocal) {
-      newLocal.style.display = "block";
+      newLocal.style.visibility = "visible";
     }
   }
 
