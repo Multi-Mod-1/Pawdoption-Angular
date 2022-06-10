@@ -25,6 +25,7 @@ export class DogService {
 
   private dogUrl = 'http://localhost:3000/api/dogs';
   myToken!: String;
+  anotherDogUrl = this.dogUrl
 
   // private dogUrl = '../assets/dogs/dogs.json';
   constructor(private http: HttpClient,
@@ -43,11 +44,26 @@ export class DogService {
       // .pipe(
       //   map((dogs: IDog[]) => dogs.find(d => d.name === id))
       // );
-            .pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+      //       .pipe(
+      //   tap(data => console.log('All: ', JSON.stringify(data))),
+      //   catchError(this.handleError)
+      // );
   }
+
+  postPicture(image: FormData): Observable<FormData> {
+    return this.http.post<FormData>(`${this.dogUrl}/images`, image, {
+      headers: new HttpHeaders()
+      .set('content-type', 'form-data')
+    })
+      //     .pipe(
+      //   tap(data => console.log('All: ', JSON.stringify(data))),
+      //   catchError(this.handleError)
+      // );
+  }
+
+  getPicture(imageKey: string): Observable<string> {
+    return this.http.get<string>(`${this.dogUrl}/images/${imageKey}`);
+  } 
 
   deleteDog(id: number): void {
     this.token.getToken().subscribe({
@@ -68,6 +84,11 @@ export class DogService {
       }
     })
   }
+
+  // postImage(image: FormData): Observable<FormData> {
+  //   const headers = {'content-type': 'multipart/formData'}
+  //   return this.http.post<FormData>(`${this.dogUrl}/images`, image, headers)
+  // }
 
   postDog(dog: Dog): Observable<Dog> {
     const headers = { 'content-type': 'application/json'}  

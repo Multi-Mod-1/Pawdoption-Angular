@@ -34,7 +34,7 @@ export class Dog {
   breed!: string
   summary!: string
   description!: string
-  imageURL!: File
+  imageURL!: string
   LocationId!: number
   UserId!: number
 }

@@ -30,6 +30,7 @@
 
 .imageStyle {
   width: 200px;
+  clip-path: circle();
   border-width: 1px;
   border-color: aliceblue;
   border-style: solid;

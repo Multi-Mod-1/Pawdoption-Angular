@@ -1,14 +1,16 @@
 <div class="container">
   <form>
     <div class="imagePlaceholder">
-      <img id="dogImage" class="imageStyle" [src]="newDog.imageURL" alt="new dog image"/>
+      <img id="dogImage" class="imageStyle" [src]="" alt="new dog image"/>
     </div>
     <div class="dog-name">
       <input type="text" [formControl]="dogName" placeholder="Dog Name"/>
     </div>
     <div class="dog-image">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <!-- <button (click)="postImage()">Upload</button> -->
       <!-- <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" [formControl]="dogImageUrl" /> -->
-      <input type="url" (change)="updateImage()" [formControl]="dogImageUrl" placeholder="link to dog image"/>
+      <!-- <input type="url" (change)="updateImage()" [formControl]="dogImageUrl" placeholder="link to dog image"/> -->
     </div>
     <div class="dog-sex">
       <div class="male">

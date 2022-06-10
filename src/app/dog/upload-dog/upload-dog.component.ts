@@ -6,6 +6,7 @@ import { User } from '../../user'
 import { Dog } from '../dog';
 import { DogService } from '../dog.service';
 import { HttpClient } from '@angular/common/http';
+import axios from 'axios';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
@@ -20,8 +21,6 @@ export class UploadDogComponent implements OnInit {
 
   userDB: User | undefined;
   newDog = new Dog();
-
-  selectedFile!: ImageSnippet;
 
   dogName = new FormControl();
   dogImageUrl = new FormControl();
@@ -46,6 +45,11 @@ export class UploadDogComponent implements OnInit {
     "10",
     ];
 
+
+    selectedFile!: File;
+    fd = new FormData();
+    imagePath!: string;
+
   constructor(private userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
@@ -64,34 +68,23 @@ export class UploadDogComponent implements OnInit {
     );
   }
 
-  updateImage(): void {
-    const dogImage = document.getElementById("dogImage") as HTMLImageElement;
-    if (this.dogImageUrl.value != "") {
+  onFileSelected(event: any): void {
+    if (event.target.value) {
+      this.selectedFile = <File>event.target.files[0];
+      this.fd.append('file', this.selectedFile, this.selectedFile.name);
+      const dogImage = document.getElementById("dogImage") as HTMLImageElement;
       dogImage.style.display = "block"
-    } else {
-      dogImage.style.display = "none"
+      const imgString = URL.createObjectURL(this.selectedFile);
+      dogImage.src = imgString
+      this.imagePath = this.selectedFile.name;
     }
-    dogImage.src = this.dogImageUrl.value
-    console.log(this.dogImageUrl.value);
   }
 
-  processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener('load', (event: any) => {
-
-      this.selectedFile = new ImageSnippet(event.target.result, file);
-
-      console.log(this.selectedFile.file)
-      // const formData = new FormData();
-
-      // formData.append('image', this.selectedFile.file);
-
-      // console.log(formData)
+  postImage(): void {
+    this.http.post(`${this.dogService.anotherDogUrl}/images`, this.fd)
+    .subscribe( result => {
+      console.log(result)
     });
-
-    reader.readAsDataURL(file);
   }
 
   submitDog(): void {
@@ -111,11 +104,11 @@ export class UploadDogComponent implements OnInit {
       this.newDog.breed = this.dogBreed.value
       this.newDog.summary = this.dogSummary.value
       this.newDog.description = this.dogDescription.value
-      // this.newDog.imageURL = this.dogImageUrl.value; 
-      this.newDog.imageURL = this.selectedFile.file; 
+      this.postImage();
+      this.newDog.imageURL = `${this.dogService.anotherDogUrl}/images/${this.imagePath}`; 
       this.newDog.LocationId = this.userDB.LocationId;
       this.newDog.UserId = this.userDB.id;
-      // console.log(this.newDog)
+      console.log(this.newDog)
       const headers = { 'content-type': 'application/json'}  
       const body=JSON.stringify(this.newDog);
       console.log(body)
