@@ -6,7 +6,6 @@ import { User } from '../../user'
 import { Dog } from '../dog';
 import { DogService } from '../dog.service';
 import { HttpClient } from '@angular/common/http';
-import axios from 'axios';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {}

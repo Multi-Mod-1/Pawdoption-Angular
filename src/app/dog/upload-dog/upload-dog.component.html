@@ -1,45 +1,76 @@
 <div class="container">
   <form>
-    <div class="imagePlaceholder">
-      <img id="dogImage" class="imageStyle" [src]="" alt="new dog image"/>
-    </div>
-    <div class="dog-name">
-      <input type="text" [formControl]="dogName" placeholder="Dog Name"/>
-    </div>
-    <div class="dog-image">
-      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
-      <!-- <button (click)="postImage()">Upload</button> -->
-      <!-- <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" [formControl]="dogImageUrl" /> -->
-      <!-- <input type="url" (change)="updateImage()" [formControl]="dogImageUrl" placeholder="link to dog image"/> -->
-    </div>
-    <div class="dog-sex">
-      <div class="male">
-        <input type="radio" id="male" [formControl]="dogSex" [value]=true>
-        <label for="male">Male</label>
+    <div class="header">
+      <div class="dogPic">
       </div>
-      <div class="female">
-        <input type="radio" id="female" [formControl]="dogSex" [value]=false>
-        <label for="female">Female</label>
+      <div class="imagePreview">
+      </div>
+      <div class="uploadImageButton">
+      </div>
+      <div class="dogName">
+      </div>
+      <div class="dogDetails">
+        
+        <select [formControl]="dogAge">
+          <option *ngFor="let age of dogAgeList;" [value]="age">
+            {{age}}
+          </option>
+        </select>
+        <input type="text" [formControl]="dogBreed" placeholder="Dog Breed" />
       </div>
     </div>
-    <div class="dog-age">
-      <select [formControl]="dogAge">
-        <option *ngFor="let age of dogAgeList;" [value]="age">
-          {{age}}
-        </option>
-      </select>
-    </div>
-    <div class="dog-breed">
-      <input type="text" [formControl]="dogBreed" placeholder="Dog Breed" />
-    </div>
-    <div class="dog-description">
-      <textarea class="descriptionStyle" [formControl]="dogDescription" placeholder="Please provide a detailed description of this dog"></textarea>
-    </div>
-    <div class="dog-summary">
+    <div class="summary">
       <input type="text" [formControl]="dogSummary" placeholder="Please provided a short summary of this dog"/>
     </div>
-    <div class="submitButton">
+    <div class="Long-Description">
+      <textarea class="descriptionStyle" [formControl]="dogDescription" placeholder="Please provide a detailed description of this dog"></textarea>
+    </div>
+    <div class="submit">
       <button (click)="submitDog()" class="single-page-button">Add Dog</button>
     </div>
   </form>
+</div>
+
+<div class="single-page">
+  <div id="single-page-card">
+    <div class="single-page-header">
+      <div>
+        <img id="dogImage" class="single-page-dog-img" [src]="" alt="new dog image"/>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        <h2 class="single-page-dog-name">
+          <input type="text" [formControl]="dogName" placeholder="Dog Name"/>
+        </h2>
+      </div>
+      <div class="single-page-information">
+        <p>
+          <input type="radio" id="male" [formControl]="dogSex" [value]=true>
+          <label for="male">Male</label>
+          <input type="radio" id="female" [formControl]="dogSex" [value]=false>
+          <label for="female">Female</label>
+          <!-- Sex: {{dog?.sex}} -->
+          <br/>
+          <!-- Age: {{dog?.age}} -->
+          <br/>
+          <!-- Breed: {{dog?.breed}} -->
+          <br/>
+          <!-- Location: {{}} -->
+        </p>
+      </div>
+    </div>
+    <div class="single-page-about-dog">
+      <p>
+        {{dog?.description}}
+      </p>
+    </div>
+    <div style="text-align: center;">
+      <button class='single-page-button'
+              (click)='onBack()'>
+        <i></i> Back
+      </button>
+      <button class='single-page-button'
+              (click)='toForm()'>
+        <i></i> Interested?
+      </button>
+    </div>
+  </div>
 </div>
