@@ -72,7 +72,6 @@ export class UploadDogComponent implements OnInit {
       this.selectedFile = <File>event.target.files[0];
       this.fd.append('file', this.selectedFile, this.selectedFile.name);
       const dogImage = document.getElementById("dogImage") as HTMLImageElement;
-      dogImage.style.display = "block"
       const imgString = URL.createObjectURL(this.selectedFile);
       dogImage.src = imgString
       this.imagePath = this.selectedFile.name;
@@ -84,6 +83,12 @@ export class UploadDogComponent implements OnInit {
     .subscribe( result => {
       console.log(result)
     });
+  }
+
+  cancel(): void {
+    if (this.userDB) {
+      this.router.navigateByUrl(`/users/${this.userDB.email}`);
+    }
   }
 
   submitDog(): void {
