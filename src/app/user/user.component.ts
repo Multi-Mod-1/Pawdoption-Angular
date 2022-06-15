@@ -44,14 +44,14 @@ export class UserComponent implements OnInit {
   }
 
   getUser(): void {
-    const email = String(this.route.snapshot.paramMap.get('email'));
-    this.userService.getUserByEmail(email).subscribe(
+    const id = Number(this.route.snapshot.paramMap.get('userId'));
+    this.userService.getUserById(id).subscribe(
       data => this.userDB = data
     )
   }
 
   toUploadForm(): void {
-    this.router.navigateByUrl(`/user/${this.userDB.email}/upload`);
+    this.router.navigateByUrl(`/user/${this.userDB.id}/upload`);
   }
 
   copyToClipboard(el: HTMLDivElement) {

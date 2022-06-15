@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: 'dogs', component: DogListComponent},
   {path: 'about', component: AboutComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'user/:email', component: UserComponent},
-  {path: 'user/:email/upload', component: UploadDogComponent},
+  {path: 'user/:userId', component: UserComponent},
+  {path: 'user/:userId/upload', component: UploadDogComponent},
   // { path: '', redirectTo: 'dogs', pathMatch: 'full' },
   { path: '**', redirectTo: 'dogs', pathMatch: 'full' }
 ];

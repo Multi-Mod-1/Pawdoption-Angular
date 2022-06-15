@@ -57,8 +57,8 @@ export class UploadDogComponent implements OnInit {
 
   ngOnInit(): void {
     this.dogAge.setValue("Please Select Age in Years...")
-    const email = String(this.route.snapshot.paramMap.get('email'));
-    this.userService.getUserByEmail(email).subscribe({
+    const id = Number(this.route.snapshot.paramMap.get('userId'));
+    this.userService.getUserById(id).subscribe({
       next: data => {
         this.userDB = data
         // this.dogLocation.setValue(data.LocationId);
@@ -87,11 +87,12 @@ export class UploadDogComponent implements OnInit {
 
   cancel(): void {
     if (this.userDB) {
-      this.router.navigateByUrl(`/user/${this.userDB.email}`);
+      this.router.navigateByUrl(`/user/${this.userDB.id}`);
     }
   }
 
   submitDog(): void {
+    console.log("clicked!")
     if (this.userDB) {
       this.newDog.name = this.dogName.value;
       const ds = this.dogSex.value;
