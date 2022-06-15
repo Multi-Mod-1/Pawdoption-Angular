@@ -87,7 +87,7 @@ export class UploadDogComponent implements OnInit {
 
   cancel(): void {
     if (this.userDB) {
-      this.router.navigateByUrl(`/users/${this.userDB.email}`);
+      this.router.navigateByUrl(`/user/${this.userDB.email}`);
     }
   }
 

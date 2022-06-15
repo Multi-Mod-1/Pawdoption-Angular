@@ -55,9 +55,9 @@ h2 {
 input {
   background-color: #E5E5E5;
   border-style: none;
+  outline: none;
 }
 
-/* label {
-  color: black;
-} */
-
+input[type="file"] {
+  display: none;
+}
