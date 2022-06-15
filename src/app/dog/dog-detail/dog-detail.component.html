@@ -1,46 +1,48 @@
-<div class="single-page">
-  <div id="single-page-card">
-    <div class="single-page-header">
-      <div>
-        <img
-            class="single-page-dog-img"
-            [src]='dog?.imageURL'
-            alt={{dog?.name}}
-          />
-        <h2 class="single-page-dog-name">{{dog?.name}}</h2>
+<div *ngIf="dog">
+  <div class="single-page">
+    <div id="single-page-card">
+      <div class="single-page-header">
+        <div>
+          <img
+              class="single-page-dog-img"
+              [src]='dog?.imageURL'
+              alt={{dog?.name}}
+            />
+          <h2 class="single-page-dog-name">{{dog?.name}}</h2>
+        </div>
+        <div class="single-page-information">
+          <p>
+            Sex: {{dog?.sex}}
+            <br/>
+            Age: {{dog?.age}}
+            <br/>
+            Breed: {{dog?.breed}}
+            <br/>
+            Location: {{dog?.Location?.state}}
+          </p>
+        </div>
       </div>
-      <div class="single-page-information">
+      <div class="single-page-about-dog">
         <p>
-          Sex: {{dog?.sex}}
-          <br/>
-          Age: {{dog?.age}}
-          <br/>
-          Breed: {{dog?.breed}}
-          <br/>
-          Location: {{dog?.Location?.state}}
+          {{dog?.description}}
         </p>
       </div>
-    </div>
-    <div class="single-page-about-dog">
-      <p>
-        {{dog?.description}}
-      </p>
-    </div>
-    <div style="text-align: center;">
-      <button class='single-page-button'
-              (click)='onBack()'>
-        <i></i> Back
-      </button>
-      <button class='single-page-button'
-              (click)='toForm()'>
-        <i></i> Interested?
-      </button>
-    </div>
-    <div *ngIf="auth.isAuthenticated$ | async">
-      <div *ngIf="auth.user$ | async as user">
-        <div *ngIf="(user.email | lowercase) == (dog.User.email | lowercase)">
-          <div id="deleteDog" class="deleteButtonDiv">
-            <button (click)="removeDog()" class="single-page-button">Delete This Dog</button>
+      <div style="text-align: center;">
+        <button class='single-page-button'
+                (click)='onBack()'>
+          <i></i> Back
+        </button>
+        <button class='single-page-button'
+                (click)='toForm()'>
+          <i></i> Interested?
+        </button>
+      </div>
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <div *ngIf="auth.user$ | async as user">
+          <div *ngIf="(user.email | lowercase) == (dog.User.email | lowercase)">
+            <div id="deleteDog" class="deleteButtonDiv">
+              <button (click)="removeDog()" class="single-page-button">Delete This Dog</button>
+            </div>
           </div>
         </div>
       </div>

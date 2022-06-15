@@ -14,4 +14,7 @@ export class ListShelfComponent {
     @Input() name: string = '';
     @Input() summary: string = '';
     @Input() imagePath: string = '';
+
+    
 }
+

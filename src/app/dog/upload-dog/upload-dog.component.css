@@ -1,84 +1,63 @@
-.container {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". imagePlaceholder ."
-    "dog-name dog-name dog-name"
-    "dog-image dog-image dog-image"
-    "dog-sex dog-age dog-breed"
-    "dog-description dog-description dog-description"
-    "dog-summary dog-summary dog-summary"
-    "dog-location dog-location dog-location"
-    ". submitButton .";
-}
-
-.dog-name {
-  justify-self: start;
-  grid-area: dog-name;
-}
-
-.dog-image {
-  justify-self: start;
-  grid-area: dog-image;
-}
-
-.imagePlaceholder {
-  grid-area: imagePlaceholder;
-}
-
-.imageStyle {
-  width: 200px;
-  border-width: 1px;
-  border-color: aliceblue;
+.FormHeader {
+  border-radius: 20px;
+  border-color: #FFC93F;
+  background-color: white;
   border-style: solid;
-  display: none;
+  width: 50vw;
+  /* height: 60vh; */
+  padding-bottom: 10px;
 }
 
-.dog-sex {  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
+.AdoptionBody {
+  display: grid;
+  grid-template-columns: auto;
+  width: 50vw;
+
+}
+
+h2 {
+  /* margin-top: -10px; */
+  /* color: black; */
+  margin-top: -0.25em;
+
+}
+
+.myForm {
+  display: grid;
+  grid-template-columns: [labels] auto [controls] 1fr;
   grid-auto-flow: row;
-  grid-template-areas:
-    "male female";
-  justify-self: stretch;
-  grid-area: dog-sex;
+  grid-gap: .8em;
+  font-size: large;
+  /* background: #eee; */
+  padding: 1.2em;
+  margin-top: -1em;
+}
+.myForm > label  {
+  grid-column: labels;
+  grid-row: auto;
+}
+.myForm > input,
+.myForm > textarea,
+.myForm > button {
+  grid-column: controls;
+  grid-row: auto;
+  border: none;
+  padding: 1em;
 }
 
-.male { grid-area: male; }
-
-.female { grid-area: female; }
-
-.dog-age {
-  justify-self: start;
-  grid-area: dog-age;
+.clip-circle {
+  width: 30vw; 
+  clip-path: circle();
+  margin-top: 10px;
 }
 
-.dog-breed {
-  justify-self: start;
-  grid-area: dog-breed;
-}
 
-.dog-description { grid-area: dog-description; }
-
-.descriptionStyle {
-  width: 100%;
-  height: 100%;
-  /* background-color: #F8F8FF; */
-  /* font-family: "Oxygen", sans-serif; */
-  /* font-size: medium; */
+input {
+  background-color: #E5E5E5;
+  border-style: none;
   outline: none;
 }
 
-.dog-summary { grid-area: dog-summary; }
-
-.dog-location {
-  justify-self: start;
-  grid-area: dog-location;
-}
-
-.submitButton {
-  grid-area: submitButton;
+input[type="file"] {
+  display: none;
 }

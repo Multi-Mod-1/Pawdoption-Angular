@@ -2,10 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IDog } from "../dog";
 import { DogService } from "../dog.service";
-import { Meta } from "@angular/platform-browser";
+import { Meta, SafeUrl } from "@angular/platform-browser";
 import { AuthService } from "@auth0/auth0-angular";
 import { catchError, map, tap } from "rxjs";
-import { Subscription } from "rxjs";
+import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from "../../token.service";
 
@@ -21,6 +21,8 @@ export class DogDetailComponent implements OnInit {
   meta_tag = this.meta.addTag({name:"description", content:"Information and details about a single dog."});  
   userEmail!: string | undefined;
   dogEmail!: string;
+  // img!: SafeUrl;
+
 
   private dogUrl = 'http://localhost:3000/api/dogs';
   myToken!: String;
@@ -31,7 +33,8 @@ export class DogDetailComponent implements OnInit {
               public auth: AuthService, 
               private http: HttpClient,
               private token: TokenService,
-              private meta: Meta) {
+              private meta: Meta,
+              private sanitizer: DomSanitizer) {
   }
   
   ngOnInit(): void {
@@ -41,6 +44,8 @@ export class DogDetailComponent implements OnInit {
         this.getUser();
       }
       this.meta_tag;
+      
+
   }
 
   getDog(id: number): void {
@@ -48,6 +53,12 @@ export class DogDetailComponent implements OnInit {
       next: data => {
       this.dog = data;
       this.dogEmail = data.User.email;
+      // console.log("!!!!!!"  + data.imageURL.size)
+      // const objectURL = 'data:image/jpeg;base64,' + data.imageURL;
+      //    this.img = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      // const objectURL = URL.createObjectURL(data.imageURL);
+      // const img = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      // this.img = img;
       }
     })
   }
@@ -92,10 +103,6 @@ export class DogDetailComponent implements OnInit {
         }
       })
 
-      // this.dogService.deleteDog(id);
-      // .then(() => {
-        // window.location.reload();
-      // });
     }
   }
 

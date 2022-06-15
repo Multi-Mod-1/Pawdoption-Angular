@@ -12,17 +12,33 @@ import { UserService } from '../user.service';
 })
 export class NavigationBarComponent {
   title = 'Pawdoption';
+  userEmail!: string | undefined;
+  userAuth: any;
   // constructor(public auth: AuthService) {}
 
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private router: Router, private userService: UserService) {}
+  constructor(@Inject(DOCUMENT) 
+  public document: Document, 
+  public auth: AuthService, 
+  private router: Router, 
+  private userService: UserService) {}
 
   toLogin(): void {
     this.router.navigate(['/login'])
   }
 
   toProfile(): void {
-    this.auth.user$.subscribe(
-      data => this.router.navigate([`/user/${data?.email}`])
-    )
+    this.auth.user$.subscribe({
+      next: data => {
+        if (data?.email) {
+          console.log(data.email);
+          this.userService.getUserByEmail(data.email).subscribe(
+            dbUser => this.router.navigate([`/user/${dbUser.id}`])
+          )
+        }
+      }
+    })
+    // this.auth.user$.subscribe(
+    //   data => this.router.navigate([`/user/${data?.id}`])
+    // )
   }
 }

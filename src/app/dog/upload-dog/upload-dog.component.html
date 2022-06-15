@@ -1,43 +1,45 @@
-<div class="container">
-  <form>
-    <div class="imagePlaceholder">
-      <img id="dogImage" class="imageStyle" [src]="newDog.imageURL" alt="new dog image"/>
-    </div>
-    <div class="dog-name">
-      <input type="text" [formControl]="dogName" placeholder="Dog Name"/>
-    </div>
-    <div class="dog-image">
-      <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" [formControl]="dogImageUrl" />
-      <!-- <input type="url" (change)="updateImage()" [formControl]="dogImageUrl" placeholder="link to dog image"/> -->
-    </div>
-    <div class="dog-sex">
-      <div class="male">
-        <input type="radio" id="male" [formControl]="dogSex" [value]=true>
+<div class="FormHeader">
+  <div style="text-align: center;">
+    <img id="dogImage" alt="new dog image" src="../../../assets/images/image-not-found.png" class="clip-circle"/>
+  </div>
+  <div style="text-align: center; margin: 20px;">
+    <label class="single-page-button">
+      Upload Photo
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" required/>
+    </label>
+  </div>
+  <div class="AdoptionBody">
+    <form class="myForm">
+      <label for="customer_name">Dog Name </label>
+      <input type="text" [formControl]="dogName" placeholder="Please enter the name of the dog" required/>
+      <label for="dogSex">Sex</label>
+      <span id="dogSex">
         <label for="male">Male</label>
-      </div>
-      <div class="female">
-        <input type="radio" id="female" [formControl]="dogSex" [value]=false>
+        <input name="dogSex" type="radio" id="male" [formControl]="dogSex" [value]=true required>
         <label for="female">Female</label>
-      </div>
-    </div>
-    <div class="dog-age">
-      <select [formControl]="dogAge">
+        <input name="dogSex" type="radio" id="female" [formControl]="dogSex" [value]=false>
+      </span>
+      <label for="dogAge">Age</label>
+      <select id="dogAge" [formControl]="dogAge" required>
         <option *ngFor="let age of dogAgeList;" [value]="age">
           {{age}}
         </option>
       </select>
-    </div>
-    <div class="dog-breed">
-      <input type="text" [formControl]="dogBreed" placeholder="Dog Breed" />
-    </div>
-    <div class="dog-description">
-      <textarea class="descriptionStyle" [formControl]="dogDescription" placeholder="Please provide a detailed description of this dog"></textarea>
-    </div>
-    <div class="dog-summary">
-      <input type="text" [formControl]="dogSummary" placeholder="Please provided a short summary of this dog"/>
-    </div>
-    <div class="submitButton">
-      <button (click)="submitDog()" class="single-page-button">Add Dog</button>
-    </div>
-  </form>
+      <label for="dogBreed">Breed</label>
+      <input name="dogBreed" type="text" [formControl]="dogBreed" placeholder="Please enter the breed of the dog" required/>
+      <label for="summary">Summary</label>
+      <input id="summary" type="text" [formControl]="dogSummary" placeholder="Please provided a short summary of the dog" required/>
+      <label for="description">Description</label>
+      <textarea id="description" style="background-color: #E5E5E5; outline: none;" class="descriptionStyle" [formControl]="dogDescription" placeholder="Please provide a detailed description of the dog. Please also include the adoption price" required></textarea>
+
+      <!-- <label for="email_address">Your Email </label>
+      <input type="email" name="email_address" id="email_address" required/>
+      <label for="comments">Message</label>
+      <textarea style="background-color: #E5E5E5;" name="comments" id="comments" maxlength="500" placeholder="Please write a message to the foster for why you want to adopt this dog" required></textarea> -->
+    </form>
+  </div>
+  <div style="text-align: center;">
+    <button class='single-page-button' (click)='cancel()'>Cancel</button>
+    <button (click)="submitDog()" class="single-page-button">Add Dog</button>
+  </div>
 </div>

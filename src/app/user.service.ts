@@ -11,8 +11,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(`${this.userUrl}/${userId}`)
+        .pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))),
+      );
+  }
+
   getUserByEmail(email: string): Observable<User> {
-    return this.http.get<User>(`${this.userUrl}/${email}`)
+    return this.http.get<User>(`${this.userUrl}/email/${email}`)
         .pipe(
         tap(data => console.log('All: ', JSON.stringify(data))),
       );
